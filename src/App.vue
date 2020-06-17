@@ -24,9 +24,7 @@
           width="100"
         />
       </div>
-
       <v-spacer></v-spacer>
-
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
@@ -34,25 +32,20 @@
       >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
+        <!-- <v-icon>mdi-account-details</v-icon> -->
       </v-btn>
     </v-app-bar>
     <v-content>
-      <carousel class="carousel">
-<carousel-slide>
-  <div class="card"></div>
-</carousel-slide>
-<carousel-slide>
-<v-card width="700" class="mx-auto mt-5">
-<v-card-title>Expériences</v-card-title>
-<v-card-text></v-card-text>
- <v-card-action></v-card-action>
-</v-card>
-</carousel-slide>
-<carousel-slide><v-card width="700" class="mx-auto mt-5"><v-card-title>Formations</v-card-title></v-card> <v-card-text></v-card-text> <v-card-action></v-card-action> </carousel-slide>
-<carousel-slide><v-card width="700" class="mx-auto mt-5"><v-card-title>Compétences</v-card-title></v-card><v-card-text></v-card-text> <v-card-action></v-card-action></carousel-slide>
-<carousel-slide><v-card width="700" class="mx-auto mt-5"><v-card-title>Réalisations</v-card-title></v-card><v-card-text></v-card-text> <v-card-action></v-card-action></carousel-slide>
-<carousel-slide><v-card width="700" class="mx-auto mt-5"><v-card-title>Langues</v-card-title></v-card><v-card-text></v-card-text> <v-card-action></v-card-action></carousel-slide>
-</carousel>
+    <carousel class="carousel">
+  <carousel-slide v-for="n in slides" :key="n" :index="n-1">
+
+    <v-card style="position:absolute; left:0; right:0; text-align:center;" class="">
+      <v-card-title>{{n}}<v-icon>mdi-open-in-new</v-icon></v-card-title>
+      <v-card-text></v-card-text>
+      <v-card-action></v-card-action>
+    </v-card>
+  </carousel-slide>
+  </carousel>
     </v-content>
   </v-app>
 </template>
@@ -60,17 +53,21 @@
 <script>
 import Carousel from './components/carousel/Carousel'
 import CarouselSlide from './components/carousel/CarouselSlide'
+// import { mdiAccountDetails } from '@mdi/js';
 
 export default {
   name: 'App',
-
+  data() {
+    return {
+      slides: 5
+    }
+  },
   components: {
     Carousel,
     CarouselSlide
-  },
-
-  data: () => ({
-    //
-  }),
+  }
 };
 </script>
+<style>
+
+</style>
