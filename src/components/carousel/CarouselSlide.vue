@@ -1,10 +1,7 @@
 <template>
 <transition :name="transition">
 <div v-if="visible">
-
-
 <slot></slot>
-
 </div>
 </transition>
 </template>

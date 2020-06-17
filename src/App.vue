@@ -31,19 +31,14 @@
         text
       >
         <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
         <!-- <v-icon>mdi-account-details</v-icon> -->
       </v-btn>
     </v-app-bar>
     <v-content>
     <carousel class="carousel">
   <carousel-slide v-for="n in slides" :key="n" :index="n-1">
-
-    <v-card style="position:absolute; left:0; right:0; text-align:center;" class="">
-      <v-card-title>{{n}}<v-icon>mdi-open-in-new</v-icon></v-card-title>
-      <v-card-text></v-card-text>
-      <v-card-action></v-card-action>
-    </v-card>
+  <card>
+  </card>
   </carousel-slide>
   </carousel>
     </v-content>
@@ -53,6 +48,7 @@
 <script>
 import Carousel from './components/carousel/Carousel'
 import CarouselSlide from './components/carousel/CarouselSlide'
+import Card from './components/carousel/Card'
 // import { mdiAccountDetails } from '@mdi/js';
 
 export default {
@@ -64,7 +60,8 @@ export default {
   },
   components: {
     Carousel,
-    CarouselSlide
+    CarouselSlide, 
+    Card
   }
 };
 </script>
