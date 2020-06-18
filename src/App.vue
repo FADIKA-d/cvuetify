@@ -1,68 +1,50 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="secondary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-      <v-spacer></v-spacer>
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <!-- <v-icon>mdi-account-details</v-icon> -->
-      </v-btn>
-    </v-app-bar>
-    <v-content>
-    <carousel class="carousel">
-  <carousel-slide v-for="n in slides" :key="n" :index="n-1">
-  <card>
-  </card>
-  </carousel-slide>
-  </carousel>
-    </v-content>
+  <cv-nav>
+  </cv-nav>
+    <v-main>
+      <carousel class="carousel d-flex justify-center mt-5">
+        <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+        </carousel-slide>
+      </carousel>
+    </v-main>
+  <cv-footer >
+    </cv-footer>
   </v-app>
 </template>
 
 <script>
-import Carousel from './components/carousel/Carousel'
-import CarouselSlide from './components/carousel/CarouselSlide'
-import Card from './components/carousel/Card'
-// import { mdiAccountDetails } from '@mdi/js';
+import Carousel from './components/carousel/Carousel';
+import CarouselSlide from './components/carousel/CarouselSlide';
+import CvNav from './components/nav/CvNav';
+import CvFooter from './components/footer/CvFooter'
 
 export default {
   name: 'App',
   data() {
     return {
-      slides: 5
+      cards: [
+        {id:1, titre: 'Profil', icon:'mdi-account-details'},
+        {id:2, titre: 'Expériences', icon: 'mdi-briefcase-variant'},
+        {id:3, titre: 'Formations', icon: 'mdi-school'},
+        {id:4, titre: 'Compétences', icon: 'mdi-cog-transfer'},
+        {id:5, titre: 'Réalisations', icon: 'mdi-clipboard-check-multiple'},
+        {id:6, titre: 'Langues', icon: 'mdi-chat-processing'},
+        {id:7, titre: 'Intérêts', icon: 'mdi-head-heart'} 
+      ]
     }
   },
   components: {
     Carousel,
     CarouselSlide, 
-    Card
-  }
+    CvNav,
+    CvFooter
+  },
+   computed: {
+     cardsCount() {
+     return this.cards.length
+    }
+   }
 };
 </script>
 <style>

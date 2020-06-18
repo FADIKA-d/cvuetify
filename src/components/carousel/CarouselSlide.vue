@@ -1,7 +1,18 @@
 <template>
 <transition :name="transition">
-<div v-if="visible">
+<div v-show="visible">
 <slot></slot>
+    <div>
+        <v-card 
+        width="600"
+        >
+
+        <v-card-title >
+        <v-icon x-large> {{icon}} </v-icon>
+        </v-card-title>
+        <v-card-text> {{titre}}</v-card-text>
+        </v-card>
+    </div>
 </div>
 </transition>
 </template>
@@ -9,14 +20,15 @@
 <script>
 export default {
     props: {
-        index: {type: Number, default: 0}
+        index: {type: Number, default: 0},
+        icon: {type: String, default: "icon"},
+        titre: {type: String, default: "titre"},
+        cards: [],
     },
+    
     computed: {
-        
         transition () {
-          
-                return 'slide-' + this.$parent.direction
-        
+            return 'slide-' + this.$parent.direction
         },
         visible () {
             return this.index === this.$parent.index
@@ -30,7 +42,7 @@ export default {
     }
 .slide-right-leave-active { 
     animation: slideRightOut 5s; 
-    position: absolute; 
+    position: relative; 
     top: 0;
     left: 0;
     right: 0;
@@ -51,7 +63,7 @@ export default {
     }
 .slide-left-leave-active { 
     animation: slideLeftOut 5s; 
-    position: absolute; 
+    position: relative; 
     top: 0;
     left: 0;
     right: 0;
