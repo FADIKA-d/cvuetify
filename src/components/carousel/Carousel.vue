@@ -1,10 +1,26 @@
 <template>
-    <div>
+    <div class="car">
         <slot></slot>
-        <v-btn class="carousel__nav carousel__prev" icon @click.prevent="prevent"><v-icon>mdi-chevron-triple-left</v-icon></v-btn>
-        <v-btn class="carousel__nav carousel__next" icon @click.prevent="next"><v-icon>mdi-chevron-triple-right </v-icon> </v-btn>
+        <v-btn class="carousel__nav carousel__prev" icon @click.prevent="prevent" 
+            v-show="!hidden"
+                color="black"
+                dark
+                relative
+                left
+                fab
+                >
+                <v-icon>mdi-chevron-triple-left</v-icon></v-btn>
+        <v-btn class="carousel__nav carousel__next" icon @click.prevent="next"
+        v-show="!hidden"
+                color="black"
+                dark
+                absolute
+                right
+                fab
+                ><v-icon>mdi-chevron-triple-right </v-icon> </v-btn>
         <div class="carousel__pagination">
-            <button v-for="n in slidesCount" :key="n.i" @click="goto(n-1)" :class="{active: n-1 == index}"></button>
+            <button v-for="n in slidesCount" :key="n.i" @click="goto(n-1)" :class="{active: n-1 == index}"
+            ></button>
         </div>
     </div>
 </template>
@@ -49,25 +65,18 @@ export default {
 }
 </script>
 <style>
-
-.carousel__prev {
-   
-    left: 10px;
-    right: 0px
-}
-.carousel__next {
- 
-    right: 0px;
-    left: 10px;
+.carousel {
+    position: relative;
 }
 .carousel__pagination {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: 0;
     right: 0;
     text-align: center;
 }
 .carousel__pagination button {
+    position: relative;
     display: inline-block;
     width: 10px;
     height: 10px;

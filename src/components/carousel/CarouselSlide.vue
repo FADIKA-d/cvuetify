@@ -2,15 +2,12 @@
 <transition :name="transition">
 <div v-show="visible">
 <slot></slot>
-    <div>
-        <v-card 
-        width="600"
-        >
-
-        <v-card-title >
-        <v-icon x-large> {{icon}} </v-icon>
-        </v-card-title>
-        <v-card-text> {{titre}}</v-card-text>
+    <div class="card__item ">
+        <v-card width="600" class="">
+            <v-card-title class="slide__card">
+                <v-icon x-large> {{icon}} </v-icon>
+            </v-card-title>
+            <v-card-text> {{titre}}</v-card-text>
         </v-card>
     </div>
 </div>
@@ -37,6 +34,14 @@ export default {
 }
 </script>
 <style>
+.slide__card {
+    justify-content: center;
+}
+.card__item {
+    text-align: center;
+    position: relative;
+    left: 35%;
+}
 .slide-right-enter-active { 
      animation : slideRightIn 5s; 
     }
