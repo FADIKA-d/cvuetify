@@ -44,6 +44,16 @@ $sql = "SELECT * FROM `icon` ";
         $requete = $db->query($sql);
         $requete->execute();
         $dataSkill = $requete->fetchAll(PDO::FETCH_OBJ);
+
+$sql = "SELECT * FROM `education` ORDER BY `education_id` DESC LIMIT 1";
+        $requete = $db->query($sql);
+        $lastEducationData = $requete->fetchAll(PDO::FETCH_OBJ);
+
+$sql = "SELECT * FROM `experience` ORDER BY `experience_id` DESC LIMIT 1";
+        $requete = $db->query($sql);
+        $lastExperienceData = $requete->fetchAll(PDO::FETCH_OBJ);
+
+
 $result= array(
         "contact" => $dataContact, 
         "education" => $dataEducation, 
@@ -51,7 +61,10 @@ $result= array(
         "interest" => $dataInterest, 
         "language" => $dataLanguage, 
         "profil" => $dataProfil, 
-        "skill" => $dataSkill
-        "icon" => $dataIcon);
+        "skill" => $dataSkill,
+        "icon" => $dataIcon,
+        "lastEduction" => $lastEducationData,
+        "lastExperience" => $lastExperienceData
+        );
 
 echo json_encode($result);

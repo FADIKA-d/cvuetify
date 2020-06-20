@@ -67,7 +67,8 @@ export default {
         {id:4, titre: 'REALISATIONS', icon: 'mdi-clipboard-check-multiple'},
         {id:5, titre: 'LANGUES', icon: 'mdi-chat-processing'},
         {id:6, titre: 'INTERETS', icon: 'mdi-head-heart'} 
-      ]
+      ],
+      info: ""
     }
   },
   components: {
@@ -87,7 +88,14 @@ export default {
      cardsCount() {
      return this.cards.length
     }
+   }, 
+   mounted () {
+     
+      //  axios.get("cv_infos.php").then(function(result) {console.log(result.data); this.info= result.data})
+       axios.get("cv_infos.php").then(result => (this.info= result.data))
+     
    }
+   
 };
 </script>
 <style>
