@@ -11,19 +11,24 @@
       :titre="year.titre"
       small
     >
+    
       <template v-slot:opposite>
         <span
           :class="`headline font-weight-bold ${year.color}--text`"
-          v-text="year.year"
+          v-text="year.annee"
         ></span>
       </template>
-
-      <v-card class="mx-15 ">
+      <v-hover>
+      <template v-slot="{hover}">
+      <v-card
+      :class="`elevation-${hover ? 35 : 0}`" class="mx-15">
         <v-card-title class="headline justify-center"> {{year.titre}} </v-card-title>
         <v-card-text>
           {{year.texte}}
         </v-card-text>
       </v-card>
+      </template>
+      </v-hover>
     </v-timeline-item>
   </v-timeline>
 </div>
@@ -34,9 +39,9 @@ export default {
     data () {
         return {
             years: [
-        {id:1, color: 'black', titre: 'Développeur', texte:'patari patata'},
-        {id:2, color: 'black', titre: 'Développeur', texte:'patari patata'},
-        {id:3, color: 'black', titre: 'Développeur', texte:'patari patata'},
+        {id:1, color: 'black', titre: 'Développeur', texte:'patari patata', annee: "2020"},
+        {id:2, color: 'black', titre: 'Développeur', texte:'patari patata', annee: "2020"},
+        {id:3, color: 'black', titre: 'Développeur', texte:'patari patata', annee: "2020"},
        
             ]
          

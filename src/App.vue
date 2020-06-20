@@ -61,13 +61,12 @@ export default {
   data() {
     return {
       cards: [
-        {id:1, titre: 'PROFIL', icon:'mdi-account-details'},
-        {id:2, titre: 'EXPERIENCES', icon: 'mdi-briefcase-variant'},
-        {id:3, titre: 'FORMATIONS', icon: 'mdi-school'},
-        {id:4, titre: 'COMPETENCES', icon: 'mdi-cog-transfer'},
-        {id:5, titre: 'REALISATIONS', icon: 'mdi-clipboard-check-multiple'},
-        {id:6, titre: 'LANGUES', icon: 'mdi-chat-processing'},
-        {id:7, titre: 'INTERETS', icon: 'mdi-head-heart'} 
+        {id:1, titre: 'EXPERIENCES', icon: 'mdi-briefcase-variant'},
+        {id:2, titre: 'FORMATIONS', icon: 'mdi-school'},
+        {id:3, titre: 'COMPETENCES', icon: 'mdi-cog-transfer'},
+        {id:4, titre: 'REALISATIONS', icon: 'mdi-clipboard-check-multiple'},
+        {id:5, titre: 'LANGUES', icon: 'mdi-chat-processing'},
+        {id:6, titre: 'INTERETS', icon: 'mdi-head-heart'} 
       ]
     }
   },
