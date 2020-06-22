@@ -8,10 +8,11 @@
       >
       <v-card
       class="flex"
+      color= '#952175'
       flat
       tile>
  
-      <v-card-title class="teal">
+      <v-card-title class="teal lighten-3">
       <strong class="subheading"> Pour en savoir plus sur moi : </strong>
       <v-spacer></v-spacer>
       <v-btn 
@@ -23,10 +24,10 @@
       >
        <v-icon size="24px"> {{icon}} </v-icon>
       </v-btn>
-      </v-card-title>
+      </v-card-title >
   
-      <v-card-text class="py-2 white--text text-center"> {{ new Date().getFullYear() }}</v-card-text>
-      <v-card-text class="py-2 white--text text-center">Diaraye FADIKA</v-card-text>
+      <v-card-text class="py-0 white--text text-center" color="purple"> {{ new Date().getFullYear() }}</v-card-text>
+      <v-card-text class="py-0 white--text text-center">Diaraye FADIKA</v-card-text>
       </v-card>
     </v-footer>
 </div>

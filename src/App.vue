@@ -10,7 +10,6 @@
         <!-- router navigation -->
         <router-view name="navigation"></router-view>
       </div>
-
       <!-- contenue principal -->
       <v-main>
           <!-- partie carousel -->
@@ -22,26 +21,54 @@
             </carousel-slide>
           </carousel>
         </div>
-        <!-- partie rubriques -->
-        <div class="rubriques">
+          <!-- partie rubriques -->
+         <div class="rubriques" >
+          <!-- <div class="parallax-container">
+            <parallax :speed-factor="1" :direction="up" :parallax="true" :fixed="true" fixedClass="is-fixed" sectionClass="Masthead" containerClass="Masthead__image" >
+         
+              <img :src="require('./assets/clavier.jpg')" style="image">
+              <rubriques id="rubriques">
+                <formations id="formations"></formations>
+                <experiences id="experiences"></experiences>
+                <competences id="competences"></competences>
+                <realisations id="realisations"></realisations>
+                <langues id="langues"></langues>
+                <interets id="interets"></interets>
+              </rubriques>
+        
+          </parallax>
+          </div> -->
+          <v-row class="d-flex justify-center ma-5">
+          <v-btn
+              relative
+              dark
+              light="true"
+              fab
+              color="#952175"
+            >
+              <v-icon >mdi-chevron-double-down</v-icon>
+            </v-btn>
+            </v-row>
+          <div class="parallax-container d-flex align-start justify-center">
           <v-parallax
-          dark
-          height="700"
-          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+          height="auto"
+          width="auto"
+          class="parallax w-25"
+          :src="require('./assets/top_keyboard.jpg')"
           >
-            <rubriques>
+            <rubriques id="rub" class="d-block text-center" justify="start">
               <formations id="formations"></formations>
               <experiences id="experiences"></experiences>
-              <competences id="competences"></competences>
+              <competences id="competences" class="d-block"></competences>
               <realisations id="realisations"></realisations>
               <langues id="langues"></langues>
               <interets id="interets"></interets>
             </rubriques>
             <!-- router rubriques -->
-            <!-- <router-view name="rubriques"></router-view> -->
+            <router-view name="rubriques"></router-view>
           </v-parallax>
-        </div>
-
+        </div> 
+      </div>
         <!-- partie footer -->
         <div class="footer">
           <!-- <cv-footer >
@@ -65,6 +92,7 @@ import Competences from './components/rubriques/Competences'
 import Realisations from './components/rubriques/Realisations'
 import Langues from './components/rubriques/Langues'
 import Interets from './components/rubriques/Interets'
+// import Parallax from "vue-parallaxy"
 // import axios from 'axios'
 
 export default {
@@ -97,7 +125,8 @@ export default {
     Competences,
     Realisations,
     Langues,
-    Interets
+    Interets,
+    // Parallax
   },
    computed: {
      cardsCount() {
@@ -116,5 +145,33 @@ export default {
 };
 </script>
 <style>
+.parallax-container {
+  position: relative;
+}
+
+#rub {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  position: absolute;
+  align-items: start;
+}
+.v-parallax__image
+{
+  max-width: 100%;
+}
+.v-parallax__content
+{
+  vertical-align: top;
+  justify-content: start;
+  margin-top: 0rem;
+  margin-bottom: 5px;
+}
+.parallax {
+  width: 70rem;
+  height: 50rem;
+  overflow: hidden;
+  position: relative;
+}
 
 </style>

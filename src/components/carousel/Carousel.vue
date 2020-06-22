@@ -1,21 +1,21 @@
 <template>
-    <div class="car">
+    <div class="carousel">
         <slot></slot>
-        <v-btn class="carousel__nav carousel__prev" icon @click.prevent="prevent" 
-                color="black"
+        <v-btn icon class="carousel__nav carousel__prev" @click.prevent="prevent" 
+                color="#952175"
                 dark
-                relative
+                absolute
                 left
                 fab
                 >
-                <v-icon>mdi-chevron-triple-left</v-icon></v-btn>
+                <v-icon x-large>mdi-chevron-left-box-outline</v-icon></v-btn>
         <v-btn class="carousel__nav carousel__next" icon @click.prevent="next"
-                color="black"
+                color="#952175"
                 dark
                 absolute
                 right
                 fab
-                ><v-icon>mdi-chevron-triple-right </v-icon> </v-btn>
+                ><v-icon x-large>mdi-chevron-right-box-outline</v-icon> </v-btn>
         <div class="carousel__pagination">
             <button v-for="n in slidesCount" :key="n.i" @click="goto(n-1)" :class="{active: n-1 == index}"
             ></button>
@@ -66,6 +66,7 @@ export default {
 .carousel {
     position: relative;
 }
+
 .carousel__pagination {
     position: relative;
     bottom: 0px;
@@ -78,7 +79,7 @@ export default {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: #000;
+    background-color: teal;
     opacity: 0.8;
     border-radius: 10px;
     margin:7px;

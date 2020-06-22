@@ -22,9 +22,9 @@ export default {
     data () {
         return {
          languages: [
-        {id:1, language: 'Français', level: 6},
-        {id:2, language: 'Anglais', level: 4},
-        {id:3, language: 'Espagnol', level: 2}
+        {id:1, language: 'Français', level: 60},
+        {id:2, language: 'Anglais', level: 40},
+        {id:3, language: 'Espagnol', level: 20}
       ]
         }
     }

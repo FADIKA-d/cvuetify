@@ -45,15 +45,16 @@ export default {
 }
 .slide-right-enter-active { 
      animation : slideRightIn 5s; 
+     
     }
 .slide-right-leave-active { 
     animation: slideRightOut 5s; 
-    position: relative; 
+    position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    widows: 100%;  
+    width: 100%;  
 }
 @keyframes slideRightIn {
     from { transform: translateX(100%); }
@@ -69,12 +70,12 @@ export default {
     }
 .slide-left-leave-active { 
     animation: slideLeftOut 5s; 
-    position: relative; 
+    position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    widows: 100%;
+   width: 100%;
   
 }
 @keyframes slideLeftIn {
