@@ -164,7 +164,7 @@ export default {
 {
   vertical-align: top;
   justify-content: start;
-  margin-top: 0rem;
+  margin-top: 13rem;
   margin-bottom: 5px;
 }
 .parallax {

@@ -14,20 +14,18 @@
      >
 <v-card >
       <v-card-title>{{education.field}}</v-card-title> 
-      <span>      
+      <v-card-text> Diplôme : {{education.grade}}</v-card-text>
+      <v-card-text> Niveau :    
           <v-rating
+            rating="full-icon"
             :length="education.degree"
             readonly
             background-color="purple"
-            size="44"
-            >
+            color="purple"
+            size="33">
             </v-rating> 
-    </span>
-      <v-card-text>{{education.grade}}</v-card-text>
-    <v-card-text>
-     {{education.institution}}
-     {{education.place}}
-        </v-card-text>
+    </v-card-text>
+    <v-card-text> Lieu : {{education.institution}} - ({{education.place}})</v-card-text>
 </v-card>  
 </v-col>
 </v-row>
