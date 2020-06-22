@@ -2,7 +2,6 @@
     <div class="car">
         <slot></slot>
         <v-btn class="carousel__nav carousel__prev" icon @click.prevent="prevent" 
-            v-show="!hidden"
                 color="black"
                 dark
                 relative
@@ -11,7 +10,6 @@
                 >
                 <v-icon>mdi-chevron-triple-left</v-icon></v-btn>
         <v-btn class="carousel__nav carousel__next" icon @click.prevent="next"
-        v-show="!hidden"
                 color="black"
                 dark
                 absolute

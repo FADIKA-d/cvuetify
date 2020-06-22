@@ -1,53 +1,63 @@
 <template>
   <v-app>
-  <cv-nav>
-  </cv-nav>
-    <v-main>
-      <carousel class="carousel d-block mt-10">
-        <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
-        </carousel-slide>
-      </carousel>
-     <v-parallax
-    dark
-    height="700"
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-  >
-   <!-- <v-img
-          :src="require('../assets/fondEcran.jpg')"
-          class="my-3"
-          contain
-          height="200"
-        /> -->
-    <v-row
-      align="center"
-      justify="center"
-    >
-      <v-col class="text-center" cols="12">
-        <rubriques>
-          <formations></formations>
-          <experiences></experiences>
-          <competences></competences>
-          <realisations></realisations>
-          <langues></langues>
-          <interets></interets>
-        </rubriques>
-      </v-col>
-    </v-row>
-  </v-parallax>
+    <div id="app">
+      <router-view></router-view>
 
+      <!-- partie navigation -->
+      <div class="navigation">
+        <!-- <cv-nav>
+        </cv-nav> -->
+        <!-- router navigation -->
+        <router-view name="navigation"></router-view>
+      </div>
 
+      <!-- contenue principal -->
+      <v-main>
+          <!-- partie carousel -->
+        <div class="carousel">
+          <!-- router carousel -->
+          <!-- <router-view name="carousel"></router-view> -->
+          <carousel class="carousel d-block mt-10">
+            <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+            </carousel-slide>
+          </carousel>
+        </div>
+        <!-- partie rubriques -->
+        <div class="rubriques">
+          <v-parallax
+          dark
+          height="700"
+          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+          >
+            <rubriques>
+              <formations id="formations"></formations>
+              <experiences id="experiences"></experiences>
+              <competences id="competences"></competences>
+              <realisations id="realisations"></realisations>
+              <langues id="langues"></langues>
+              <interets id="interets"></interets>
+            </rubriques>
+            <!-- router rubriques -->
+            <!-- <router-view name="rubriques"></router-view> -->
+          </v-parallax>
+        </div>
 
-    </v-main>
-  <cv-footer >
-    </cv-footer>
+        <!-- partie footer -->
+        <div class="footer">
+          <!-- <cv-footer >
+          </cv-footer> -->
+          <router-view name="footer"></router-view>
+        </div>
+      </v-main>
+    </div>
   </v-app>
 </template>
 
 <script>
 import Carousel from './components/carousel/Carousel';
 import CarouselSlide from './components/carousel/CarouselSlide';
-import CvNav from './components/nav/CvNav';
-import CvFooter from './components/footer/CvFooter'
+// import CvNav from './components/nav/CvNav';
+// import CvFooter from './components/footer/CvFooter'
 import Rubriques from './components/rubriques/Rubriques'
 import Experiences from './components/rubriques/Experiences'
 import Formations from './components/rubriques/Formations'
@@ -55,6 +65,7 @@ import Competences from './components/rubriques/Competences'
 import Realisations from './components/rubriques/Realisations'
 import Langues from './components/rubriques/Langues'
 import Interets from './components/rubriques/Interets'
+// import axios from 'axios'
 
 export default {
   name: 'App',
@@ -68,14 +79,18 @@ export default {
         {id:5, titre: 'LANGUES', icon: 'mdi-chat-processing'},
         {id:6, titre: 'INTERETS', icon: 'mdi-head-heart'} 
       ],
-      info: ""
+      required:true,
+      contact: [
+        {id:1, phone: "0658414872", mail: 'd.fadika@gmail.com', adress: '14 Avenue Buffon', linkedin: 'Fadika' , github: 'FADIKA-d'}
+      ]       
     }
   },
+  
   components: {
     Carousel,
     CarouselSlide, 
-    CvNav,
-    CvFooter, 
+    // CvNav,
+    // CvFooter, 
     Rubriques, 
     Experiences,
     Formations,
@@ -92,7 +107,9 @@ export default {
    mounted () {
      
       //  axios.get("cv_infos.php").then(function(result) {console.log(result.data); this.info= result.data})
-       axios.get("cv_infos.php").then(result => (this.info= result.data))
+      //  axios
+      //  .get("../cv_infos.php")
+      //  .then(result => {console.log(result.data); this.info= result.data})
      
    }
    

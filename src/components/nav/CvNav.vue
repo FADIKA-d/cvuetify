@@ -47,7 +47,6 @@
         <v-tabs align-with-title class="d-flex justify-center">
           <v-tab v-for="categorie in categories" 
             :key="categorie.id"
-            @click="sous_rubrique"
             >
             <v-icon> {{categorie.icon}}</v-icon>
           </v-tab>

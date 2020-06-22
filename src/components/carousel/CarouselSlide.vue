@@ -8,6 +8,7 @@
                 <v-icon x-large> {{icon}} </v-icon>
             </v-card-title>
             <v-card-text> {{titre}}</v-card-text>
+            <v-card-text> contenu</v-card-text>
         </v-card>
     </div>
 </div>

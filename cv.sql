@@ -125,8 +125,8 @@ INSERT INTO `experience` (`experience_id`, `experience_company`, `experience_fun
 (3, 'TESTE POUR VOUS', 'Chargé de veille concurrentielle', 2010, 2010, 'Paris', 'Réalisation de veilles concurrentielles sur les produits financiers. Gestion des sources d’information du service de veille. Surveillance des signaux faibles.');
 INSERT INTO `education` (`education_id`, `education_degree`, `education_year`, `education_field`, `education_institution`, `education_location` ) VALUES 
 (1, 'Tire professionnel (BAC + 2)', 2020, 'Développeur Web et Web mobile', 'Afpa', 'Amiens'),
-(2, 'Master 2 (BAC +5)', 2020, 'Stratégie d’entreprise et économie industrielle', 'Panthéon-Assas ', 'Paris'),
-(3, 'Master 2 (BAC +5)', 2020, 'Economie industrielle et veille stratégique', 'Montesquieu-Bordeaux 4 ', 'Bordeaux');
+(2, 'Master 2 (BAC +5)', 2011, 'Stratégie d’entreprise et économie industrielle', 'Panthéon-Assas ', 'Paris'),
+(3, 'Master 2 (BAC +5)', 2010, 'Economie industrielle et veille stratégique', 'Montesquieu-Bordeaux 4 ', 'Bordeaux');
 INSERT INTO `language` (`language_id`, `language_name`, `language_level`) VALUES 
 (1, 'Français', 6),
 (2, 'Anglais', 4),
