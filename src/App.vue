@@ -1,8 +1,6 @@
 <template>
   <v-app>
     <div id="app">
-      
-
       <!-- partie navigation -->
       <div class="navigation">
         <!-- <cv-nav>
@@ -10,8 +8,9 @@
         <!-- router navigation -->
         <router-view name="navigation"></router-view>
       </div>
+        <v-sheet id="scrolling-techniques" class="overflow-y-auto" max-height="1000">
       <!-- contenue principal -->
-      <v-main>
+      <v-main >
           <!-- partie carousel -->
         <div class="carousel">
           <!-- router carousel -->
@@ -50,7 +49,7 @@
           <v-parallax
           height="auto"
           width="auto"
-          class="parallax w-25"
+          class="parallax "
           :src="require('./assets/top_keyboard.jpg')"
           >
             <rubriques id="rubrique" class="d-block text-center" justify="start">
@@ -81,19 +80,21 @@
                 <!-- <interets id="interets"></interets> -->
                 <router-view name="interets"></router-view>
               </div>
-            </rubriques>
             <!-- router rubriques -->
-          </v-parallax>
             <router-view name="rubriques"></router-view>
+            </rubriques>
+          </v-parallax>
         </div> 
       </div>
+      </v-main>
+      </v-sheet>
         <!-- partie footer -->
         <div class="footer">
           <!-- <cv-footer >
           </cv-footer> -->
           <router-view name="footer"></router-view>
         </div>
-      </v-main>
+      
     </div>
   </v-app>
 </template>
@@ -165,6 +166,8 @@ export default {
 <style>
 .parallax-container {
   position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 #rubrique {
@@ -183,7 +186,6 @@ export default {
   vertical-align: top;
   justify-content: start;
   margin-top: 13rem;
-  margin-bottom: 15px;
 }
 .parallax {
   width: 70rem;
