@@ -1,19 +1,24 @@
 <template>
 <div>
 <slot></slot>
-<h1 class="py-5">Langues</h1>
+
+<h1 class="py-5 font-weight-bold purple--text text-uppercase">Langues</h1>
 <v-row align="center" justify="space-around">
 <v-progress-circular
 v-for="language in languages"
     :key="language.id"
-    :rotate="-90"
+    :rotate="55"
     :size="200"
     :width="30"
     :src="language.src"
     :value="language.level"
     color="teal lighten-3"
+    
+    
 >
-<img :src="language.src" height="150px">
+
+<img :src="require(`@/assets/${language.src}.png`)" height="150px" :alt="`${language.language}`" >
+
 </v-progress-circular>
 </v-row>    
 </div>
@@ -24,13 +29,12 @@ export default {
     data () {
         return {
          languages: [
-        {id:1, language: 'Français', level: 100, src: "require('@/assets/france.png')"},
-        {id:2, language: 'Anglais', level: 60, src: "require('@/assets/united_kingdom.png')"},
-        {id:3, language: 'Espagnol', level: 30, src: "require('@/assets/spain.png')"}
+        {id:1, language: 'Français', level: 100, src: "france"},
+        {id:2, language: 'Anglais', level: 60, src: "united_kingdom"},
+        {id:3, language: 'Espagnol', level: 30, src: "spain"}
         ], 
-
         interval: {},
-        value: 0,
+        value: 0
         }
     }, 
     mounted () {

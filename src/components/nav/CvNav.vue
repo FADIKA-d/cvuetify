@@ -2,9 +2,14 @@
 <div>
   <slot></slot>
   <v-app-bar
+  absolute
       app
       color="teal lighten-3"
       dark
+      shrink-on-scroll
+      prominent
+      fade-img-on-scroll
+      scroll-target="#scrolling-techniques-3"
     >
     <v-row  padding="5">
     <v-col cols="12" md="3" class="" >
@@ -48,7 +53,7 @@
           <v-tab v-for="categorie in categories" 
             :key="categorie.id"
             >
-            <v-icon> {{categorie.icon}}</v-icon>
+            <router-link :to="{name: `${categorie.titre}`}"><v-icon> {{categorie.icon}}</v-icon></router-link>
           </v-tab>
           <v-divider vertical></v-divider>
         </v-tabs>
@@ -63,13 +68,12 @@ export default {
     data () {
         return {
           categories: [ 
-            {id:1, titre: 'PROFIL', icon: 'mdi-account-details'},
-            {id:2, titre: 'EXPERIENCES', icon: 'mdi-school' }, 
-            {id:3, titre: 'FORMATIONS', icon: 'mdi-briefcase-variant'}, 
-            {id:4, titre: 'COMPETENCES', icon: 'mdi-cog-transfer'},
-            {id:5, titre: 'REALISATIONS', icon: 'mdi-clipboard-check-multiple'},
-            {id:6, titre: 'LANGUES', icon: 'mdi-chat-processing'},
-            {id:7, titre: 'INTERETS', icon: 'mdi-head-heart'}
+            {id:3, titre: 'formations', icon: 'mdi-school'}, 
+            {id:4, titre: 'compétences', icon: 'mdi-cog-transfer'},
+            {id:2, titre: 'expériences', icon: 'mdi-briefcase-variant' }, 
+            {id:5, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
+            {id:6, titre: 'langues', icon: 'mdi-chat-processing'},
+            // {id:7, titre: 'INTERETS', icon: 'mdi-head-heart'}
           ],
           contacts: [ 
             {id:1, value: '06.58.41.48.72', icon: 'mdi-cellphone-android'},

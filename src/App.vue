@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <router-view></router-view>
+      
 
       <!-- partie navigation -->
       <div class="navigation">
@@ -21,23 +21,16 @@
             </carousel-slide>
           </carousel>
         </div>
+        
           <!-- partie rubriques -->
          <div class="rubriques" >
-          <!-- <div class="parallax-container">
-            <parallax :speed-factor="1" :direction="up" :parallax="true" :fixed="true" fixedClass="is-fixed" sectionClass="Masthead" containerClass="Masthead__image" >
-         
-              <img :src="require('./assets/clavier.jpg')" style="image">
-              <rubriques id="rubriques">
-                <formations id="formations"></formations>
-                <experiences id="experiences"></experiences>
-                <competences id="competences"></competences>
-                <realisations id="realisations"></realisations>
-                <langues id="langues"></langues>
-                <interets id="interets"></interets>
-              </rubriques>
-        
-          </parallax>
-          </div> -->
+
+       <router-link :to="{name: 'sous.formations'}"> sous rubrique </router-link>
+       <router-link :to="{name: 'sous.experiences'}"> sous rubrique </router-link>
+       <router-link :to="{name: 'sous.competences'}"> sous rubrique </router-link>
+       <router-link :to="{name: 'sous.realisations'}"> sous rubrique </router-link>
+       <router-link :to="{name: 'sous.langues'}"> sous rubrique </router-link>
+                 <router-link :to="{name: 'post', params: { class: 'langues'} }"> essai</router-link>
           <v-row class="d-flex justify-center ma-5">
           <v-btn
               relative
@@ -46,7 +39,11 @@
               fab
               color="#952175"
             >
+                 
+            <router-link :to="{name: 'bottom'}" tag="button">
+              
               <v-icon >mdi-chevron-double-down</v-icon>
+              </router-link>
             </v-btn>
             </v-row>
           <div class="parallax-container d-flex align-start justify-center">
@@ -56,17 +53,38 @@
           class="parallax w-25"
           :src="require('./assets/top_keyboard.jpg')"
           >
-            <rubriques id="rub" class="d-block text-center" justify="start">
-              <formations id="formations"></formations>
-              <experiences id="experiences"></experiences>
-              <competences id="competences" class="d-block"></competences>
-              <realisations id="realisations"></realisations>
-              <langues id="langues"></langues>
-              <interets id="interets"></interets>
+            <rubriques id="rubrique" class="d-block text-center" justify="start">
+              
+              <router-view></router-view>
+
+              <div class="formations" id="formations">
+                <!-- <formations id="formations"></formations> -->
+                <router-view name="formations"></router-view>
+              </div>
+              <div class="experiences">
+                <experiences id="experiences"></experiences>
+                <router-view name="experiences"></router-view>
+              </div>
+              <div class="competences">
+                <competences id="competences" ></competences>
+                <router-view name="competences"></router-view>
+              </div>
+              <div class="realisations">
+                <realisations id="realisations"></realisations>
+                <router-view name="realisations"></router-view>
+              </div>
+              <div class="langues">
+                <langues id="langues"></langues>
+                <router-view name="langues"></router-view>
+              </div>
+              <div class="interets">
+                <!-- <interets id="interets"></interets> -->
+                <router-view name="interets"></router-view>
+              </div>
             </rubriques>
             <!-- router rubriques -->
-            <router-view name="rubriques"></router-view>
           </v-parallax>
+            <router-view name="rubriques"></router-view>
         </div> 
       </div>
         <!-- partie footer -->
@@ -85,13 +103,13 @@ import Carousel from './components/carousel/Carousel';
 import CarouselSlide from './components/carousel/CarouselSlide';
 // import CvNav from './components/nav/CvNav';
 // import CvFooter from './components/footer/CvFooter'
-import Rubriques from './components/rubriques/Rubriques'
-import Experiences from './components/rubriques/Experiences'
-import Formations from './components/rubriques/Formations'
-import Competences from './components/rubriques/Competences'
-import Realisations from './components/rubriques/Realisations'
-import Langues from './components/rubriques/Langues'
-import Interets from './components/rubriques/Interets'
+// import Rubriques from './components/rubriques/Rubriques'
+// import Experiences from './components/rubriques/Experiences'
+// import Formations from './components/rubriques/Formations'
+// import Competences from './components/rubriques/Competences'
+// import Realisations from './components/rubriques/Realisations'
+// import Langues from './components/rubriques/Langues'
+// import Interets from './components/rubriques/Interets'
 // import Parallax from "vue-parallaxy"
 // import axios from 'axios'
 
@@ -100,12 +118,12 @@ export default {
   data() {
     return {
       cards: [
-        {id:1, titre: 'EXPERIENCES', icon: 'mdi-briefcase-variant'},
-        {id:2, titre: 'FORMATIONS', icon: 'mdi-school'},
-        {id:3, titre: 'COMPETENCES', icon: 'mdi-cog-transfer'},
-        {id:4, titre: 'REALISATIONS', icon: 'mdi-clipboard-check-multiple'},
-        {id:5, titre: 'LANGUES', icon: 'mdi-chat-processing'},
-        {id:6, titre: 'INTERETS', icon: 'mdi-head-heart'} 
+        {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
+        {id:2, titre: 'formations', icon: 'mdi-school'},
+        {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
+        {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
+        {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
+        // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
       ],
       required:true,
       contact: [
@@ -119,13 +137,13 @@ export default {
     CarouselSlide, 
     // CvNav,
     // CvFooter, 
-    Rubriques, 
-    Experiences,
-    Formations,
-    Competences,
-    Realisations,
-    Langues,
-    Interets,
+    // Rubriques, 
+    // Experiences,
+    // Formations,
+    // Competences,
+    // Realisations,
+    // Langues,
+    // Interets,
     // Parallax
   },
    computed: {
@@ -149,11 +167,11 @@ export default {
   position: relative;
 }
 
-#rub {
+#rubrique {
   width: 100%;
   height: 100%;
   overflow: scroll;
-  position: absolute;
+  /* position: absolute; */
   align-items: start;
 }
 .v-parallax__image
@@ -165,7 +183,7 @@ export default {
   vertical-align: top;
   justify-content: start;
   margin-top: 13rem;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .parallax {
   width: 70rem;

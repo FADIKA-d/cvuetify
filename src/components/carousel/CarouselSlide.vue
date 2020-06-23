@@ -1,14 +1,18 @@
 <template>
+
 <transition :name="transition">
 <div v-show="visible">
 <slot></slot>
+
     <div class="card__item ">
         <v-card width="600" class="">
             <v-card-title class="slide__card">
                 <v-icon x-large> {{icon}} </v-icon>
             </v-card-title>
-            <v-card-text> {{titre}}</v-card-text>
-            <v-card-text> contenu</v-card-text>
+            <v-card-text class="text-uppercase"> {{titre}}</v-card-text>
+            <v-card-text> <router-view name=""></router-view ></v-card-text>
+            <v-card-action> </v-card-action>
+            <router-link :to="{name: `${titre}`}"> Voir les {{titre}} </router-link>
         </v-card>
     </div>
 </div>
@@ -23,7 +27,6 @@ export default {
         titre: {type: String, default: "titre"},
         cards: [],
     },
-    
     computed: {
         transition () {
             return 'slide-' + this.$parent.direction

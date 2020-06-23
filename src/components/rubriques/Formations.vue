@@ -1,10 +1,12 @@
 <template>
 <div>
 <slot></slot>
-<h1 class="py-5">Formations</h1>
-<v-row col="12" class="d-flex justify-space-around ">
-<v-col v-for="education in educations"
-      :key="education.id"
+<router-view></router-view>
+<v-container class="pa-4 text-center">
+<h1 class="py-5 font-weight-bold purple--text text-uppercase">Formations</h1>
+<v-row class="fill-height" justify="space-between">
+ <template v-for="education in educations">
+<v-col :key="education.id"
       :degree="education.degree"
       :year="education.year"
       :grade="education.grade"
@@ -13,10 +15,26 @@
       class="d-flex justify-space-around "
      >
 <v-card >
-      <v-card-title>{{education.field}}</v-card-title> 
-      <v-card-text> Diplôme : {{education.grade}}</v-card-text>
-      <v-card-text> Niveau :    
-          <v-rating
+      <v-card-title class="font-weight-bold purple--text ma-7">"{{education.field}}"</v-card-title> 
+      <v-card-text>
+          <v-row
+            class="fill-height flex-inline"
+            justify="space-between">
+            <p class="ma-1 subheading"> Diplôme : </p>
+            <div>
+            <p class="ma-0 body-1 font-weight-thin ">
+                {{education.grade}}
+            </p>
+            </div>         
+         </v-row>
+          
+          <v-row
+            class="fill-height flex-inline"
+            justify="space-between">
+            <p class="mt-4 ml-1 subheading "> Niveau : </p>
+            <div>
+            <p class="ma-0 body-1 font-weight-thin  ">
+                <v-rating
             rating="full-icon"
             :length="education.degree"
             readonly
@@ -24,11 +42,25 @@
             color="purple"
             size="33">
             </v-rating> 
-    </v-card-text>
-    <v-card-text> Lieu : {{education.institution}} - ({{education.place}})</v-card-text>
+            </p>
+            </div>    
+         </v-row>
+         <v-row
+            class="fill-height flex-inline"
+            justify="space-between">
+            <p class="ma-1 subheading"> Lieu : </p>
+            <div>
+            <p class="ma-0 body-1 font-weight-thin ">
+                {{education.institution}} - ({{education.place}})
+            </p>
+            </div>         
+         </v-row>
+</v-card-text>
 </v-card>  
 </v-col>
+ </template>
 </v-row>
+</v-container>
 </div>
 </template>
 
