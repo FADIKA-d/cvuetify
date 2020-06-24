@@ -3,9 +3,9 @@
         <slot></slot>
         <v-container class="pa-4 text-center">
             <h1 class="py-5 font-weight-bold purple--text text-uppercase">Langues</h1>
+              <v-row class="fill-height" justify="space-between">  
             <template v-for="language in languages">
-                <v-row :key="language.id" align="center" justify="space-around">
-                    <v-col cols="3">
+                <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
                     <v-progress-circular
                         :rotate="-90"
                         :size="200"
@@ -17,8 +17,8 @@
                         <img :src="require(`@/assets/${language.src}.png`)" height="150px" :alt="`${language.language}`" >
                     </v-progress-circular>
                     </v-col>
-                </v-row>
             </template>  
+                </v-row>
         </v-container>  
     </div>
 </template>

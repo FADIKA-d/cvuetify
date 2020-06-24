@@ -167,47 +167,35 @@ export default {
 <style>
 .parallax-container {
   /* position: relative; */
-  margin-top: 0;
+ position: sticky;
 }
 
 #rubrique {
   width: 100%;
   height: 100%;
-  align-items: start;
+  /* align-items: start; */
 }
 .v-parallax__image
 { 
-  display: flex;
-  align-content: stretch;
-  align-self: start;
-  width: 90em;
- position: absolute;
-  height: 90em;
+  max-width: 100%;
+  /* position: sticky; */
+  height: 120em;
+  
 }
 .v-parallax__content
 {
-   display: flex;
-align-content: flex-start;
-  align-items: flex-start;
-  align-self: start;
+   /* vertical-align: top;
+  justify-content: start; */
   margin-top: 10rem;
-  /* position: absolute; */
+  /* width: 100rem; */
+  position: absolute;
 }
-/* .v-parallax {
-  height: 1000px;
-  /* overflow: hidden; */
-  /* position: relative; */
-/* } */ */
-
 .v-parallax {
 	/* position: relative; */
-  height: 1000px;
-  width:100%;
-	overflow: hidden;
-	z-index: 0;
-}.v-parallax__image-container {
-top:initial;
-  position: fixed;
+  /* height: 1000px; */
+  width: 100%;
+	/* overflow: hidden; */
 }
+
 
 </style>

@@ -3,17 +3,16 @@
 <slot></slot>
 <v-container class="pa-4  text-center">
 <h1 class="py-5 font-weight-bold purple--text text-uppercase">Compétences</h1>
-<div >
 
   <template v-for="skill in skills">
-   <v-row :key="skill.id" class="fill-height" justify="center" align="center">
+<div :key="skill.id">
+   <v-row  justify="center" align="center">
         <v-col cols="3" class="pa-0 text-end ">
           <v-icon>{{skill.icon}}</v-icon>
         </v-col>
         <v-col cols="7" >
           <v-progress-linear
               v-model="skill.level"
-              buffer-value
               height="20"
               width= "100"
               color="teal lighten-3"
@@ -22,9 +21,9 @@
           </v-progress-linear>
       </v-col>
  </v-row>
+</div>
 </template>
 
-</div>
   </v-container>
 </div>
 </template>

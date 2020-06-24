@@ -19,7 +19,9 @@
                             <v-btn
                                 :class="{ 'show-btns': hover }"
                                 color="transparent"
+                                :href="realisation.href"
                                 icon>
+                                <a :href="`${realisation.href}`" >
                                     <v-icon
                                     :class="{ 'show-btns': hover }"
                                     x-large
@@ -27,6 +29,7 @@
                                     color="purple">
                                         mdi-eye
                                     </v-icon>
+                                </a>
                             </v-btn>
                         </v-row>
                     </v-img>
@@ -58,9 +61,9 @@ export default {
         return {
          transparent:'rgba(225, 255, 255, 0)',
          realisations: [
-            {id:1, titre: 'Site internet', theme: 'Jardinage', text: 'Site avec fonctionnalités: menu, espaceutilisateur, catalogue produit, formulaire de contact', site: 'dev.amorce.org/dfadika/jarditou', image: "jarditou"},
-            {id:2, titre: 'Site WordPress', theme: 'Youpi', text: 'Installationet configuration d\'un site e-commerce avec section blog. Création d\'un thème et d\'un plugin', site: 'dev.amorce.org/dfadika/wordpress', image: "wordpress"},
-            {id:3, titre: 'Application web', theme: 'Cinéma', text: 'Création d\'une application de recherche de films avec l\'API "TheMovieDB"', site: 'dev.amorce.org/dfadika/wordpress', image: "cinema"} 
+            {id:1, titre: 'Site internet', theme: 'Jardinage', text: 'Site avec fonctionnalités: menu, espaceutilisateur, catalogue produit, formulaire de contact', href: 'dev.amorce.org/dfadika/jarditou', image: "jarditou"},
+            {id:2, titre: 'Site WordPress', theme: 'Youpi', text: 'Installationet configuration d\'un site e-commerce avec section blog. Création d\'un thème et d\'un plugin', href: 'dev.amorce.org/dfadika/wordpress', image: "wordpress"},
+            {id:3, titre: 'Application web', theme: 'Cinéma', text: 'Création d\'une application de recherche de films avec l\'API "TheMovieDB"', href: 'dev.amorce.org/dfadika/wordpress', image: "cinema"} 
          ],
          expand: false,
         expand2: false,
