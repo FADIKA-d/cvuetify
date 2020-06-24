@@ -5,6 +5,7 @@
       dark
       color="teal lighten-3"
       padless
+      absolute
       >
       <v-card
       class="flex"

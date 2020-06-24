@@ -8,8 +8,8 @@ import Formations from './components/rubriques/Formations'
 import Competences from './components/rubriques/Competences'
 import Realisations from './components/rubriques/Realisations'
 import Langues from './components/rubriques/Langues'
-import Carousel from './components/carousel/Carousel';
-import CarouselSlide from './components/carousel/CarouselSlide';
+// import Carousel from './components/carousel/Carousel';
+// import CarouselSlide from './components/carousel/CarouselSlide';
 
 export default  [
     {
@@ -17,8 +17,8 @@ export default  [
         components: {
             // default: HelloWorld,
             navigation: CvNav,
-            carousel: Carousel,
-            carouselSlide: CarouselSlide,
+            // carousel: Carousel,
+            // carouselSlide: CarouselSlide,
             formations: Formations,
             experiences: Experiences,
             competences: Competences,
@@ -34,34 +34,34 @@ export default  [
         competences: Competences,
         realisations: Realisations,
         langues: Langues,
-        footer: CvFooter}, name: 'rubrique_formation'},
+        footer: CvFooter}, name: 'formation'},
         
-    {path: '/',  
-    components: {navigation: CvNav,
-        formations: Formations,
-        experiences: Experiences,
-        competences: Competences,
-        realisations: Realisations,
-        langues: Langues,
-        footer: CvFooter},
-        name: 'sous',
+    // {path: '/',  
+    // components: {navigation: CvNav,
+    //     formations: Formations,
+    //     experiences: Experiences,
+    //     competences: Competences,
+    //     realisations: Realisations,
+    //     langues: Langues,
+    //     footer: CvFooter},
+    //     name: 'sous',
 
-        children: [
+    //     children: [
 
-        {path: 'formations',  components: {formations: Formations}, name: 'sous.formations'},
+    //     {path: 'formations',  components: {formations: Formations}, name: 'sous.formations'},
             
-        {path: 'experiences',  components: {experiences: Experiences}, name: 'sous.experience'},
+    //     {path: 'experiences',  components: {experiences: Experiences}, name: 'sous.experiences'},
                         
-        {path: 'competences',  components: {competences: Competences}, name: 'sous.competences'},
+    //     {path: 'competences',  components: {competences: Competences}, name: 'sous.competences'},
 
-        {path: 'realisations',  component: {realisations: Realisations}, name: 'sous.realisations'},
+    //     {path: 'realisations',  component: {realisations: Realisations}, name: 'sous.realisations'},
 
-        {path: 'langues',  component:  Langues, name: 'sous.langues'},
+    //     {path: 'langues',  component:  Langues, name: 'sous.langues'},
             
-        // {path: 'interets',  components: {Interets: interets}, name: 'sous_rubrique.interets'}           
+    //     // {path: 'interets',  components: {Interets: interets}, name: 'sous_rubrique.interets'}           
         
-        ]
-    },
+    //     ]
+    // },
             
     {path: '/formations',  components: {navigation: CvNav,
                 formations: Formations,
@@ -95,8 +95,8 @@ export default  [
     {path: '/:class',  components: {
         // default: HelloWorld,
         navigation: CvNav,
-        carousel: Carousel,
-        carouselSlide: CarouselSlide,
+        // carousel: Carousel,
+        // carouselSlide: CarouselSlide,
         formations: Formations,
         experiences: Experiences,
         competences: Competences,
@@ -107,6 +107,7 @@ export default  [
     name: 'post'},
 
     {path: '/contact', component: Contact},  
+    {path: '/formation', component: Formations, name:'bottom'},  
      
     {path: '*', redirect: '/'}
     

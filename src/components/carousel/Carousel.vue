@@ -1,6 +1,11 @@
 <template>
     <div class="carousel">
         <slot></slot>
+        <!-- <div class="carouselSlide">
+            <router-view name="carouselSlide"></router-view>
+            </div> -->
+        <!-- <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+            </carousel-slide> -->
         <v-btn icon class="carousel__nav carousel__prev" @click.prevent="prevent" 
                 color="#952175"
                 dark
@@ -29,7 +34,8 @@ export default {
         return {
             index: 0, 
             slides: [],
-            direction: 'right'                       
+            direction: 'right', 
+                               
         }
     },
     computed: {

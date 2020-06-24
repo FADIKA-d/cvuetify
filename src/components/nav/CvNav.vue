@@ -2,23 +2,24 @@
 <div>
   <slot></slot>
   <v-app-bar
-  absolute
+ 
       app
       color="teal lighten-3"
       dark
       shrink-on-scroll
-      prominent
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-3"
+
+      min-height="20"
+      
+      scroll-target="#scrolling-technique"
     >
-    <v-row  padding="5">
-    <v-col cols="12" md="3" class="" >
-      <h2 class="subheading d-flex">DIARAYE</h2>
-      <h2 class="subheading d-flex">FADIKA</h2>
+    <v-row padding="5">
+    <v-col cols="12" md="3" class="" align-self-start>
+      <h2 id="name" class="subheading d-flex">DIARAYE</h2>
+      <h2 id="lastName" class="subheading d-flex">FADIKA</h2>
     </v-col>
-      <v-col cols="12" md="6" class="d-flex justify-center">
-        <v-toolbar-title class="d-flex " >
-        <h1 class="subheading font-weight-bold"> Developpeuse web et web mobile </h1> 
+      <v-col cols="12" md="6" class="d-flex justify-center " align-self="start">
+        <v-toolbar-title class="d-flex " align-self="start">
+        <h2 class="subheading font-weight-bold"> Developpeuse web et web mobile </h2> 
         </v-toolbar-title>
       </v-col >
         <v-col cols="12" md="3" class="d-flex justify-end mt-2 pt-2">
@@ -26,7 +27,7 @@
               <v-card
               v-show="expand"
               color="white"
-              class="pa-2"
+              class="pa-0 ma-0"
               >
                 <v-card-text
                 class="purple--text pa-0 ma-0"
@@ -34,7 +35,7 @@
                 v-for="contact in contacts" 
                 :key="contact.id"
                 >
-                  <v-icon class="purple--text "> {{contact.icon}}</v-icon> {{contact.value}}
+                  <v-icon class="purple--text " > {{contact.icon}}</v-icon> {{contact.value}}
                 </v-card-text>
               </v-card>
           </v-expand-transition>
@@ -43,17 +44,19 @@
             color="white"
             @click="expand = !expand"
             icon >
-              <v-icon> mdi-account-details</v-icon>
+              <v-icon x-large> mdi-account-details</v-icon>
           </v-btn>
           
         </v-col>
         </v-row>
       <template v-slot:extension>
-        <v-tabs align-with-title class="d-flex justify-center">
+        <v-tabs optional
+        slider-color="purple"
+        class="d-flex justify-center tabs">
           <v-tab v-for="categorie in categories" 
             :key="categorie.id"
             >
-            <router-link :to="{name: `${categorie.titre}`}"><v-icon> {{categorie.icon}}</v-icon></router-link>
+            <router-link :to="{name: `${categorie.titre}`}"><v-icon color="white"> {{categorie.icon}}</v-icon></router-link>
           </v-tab>
           <v-divider vertical></v-divider>
         </v-tabs>
@@ -87,4 +90,28 @@ export default {
     }
 }
 </script>
-<style></style>
+<style>
+#name {
+      font-family: 'Acme', sans-serif;
+
+    font-family: 'Changa', sans-serif;
+
+    font-family: 'DM Mono', monospace;
+
+    font-family: 'Sriracha', cursive;
+
+    font-family: 'Syncopate', sans-serif;
+}
+.lastName
+{
+      font-family: 'Acme', sans-serif;
+
+    font-family: 'Changa', sans-serif;
+
+    font-family: 'DM Mono', monospace;
+
+    font-family: 'Sriracha', cursive;
+
+    font-family: 'Syncopate', sans-serif;
+}
+</style>

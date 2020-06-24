@@ -11,8 +11,8 @@
             </v-card-title>
             <v-card-text class="text-uppercase"> {{titre}}</v-card-text>
             <v-card-text> <router-view name=""></router-view ></v-card-text>
-            <v-card-action> </v-card-action>
-            <router-link :to="{name: `${titre}`}"> Voir les {{titre}} </router-link>
+            <!-- <v-card-action> </v-card-action> -->
+            <router-link :to="{name: `${titre}`}"> Voir les toutes les {{titre}} </router-link>
         </v-card>
     </div>
 </div>
@@ -25,7 +25,19 @@ export default {
         index: {type: Number, default: 0},
         icon: {type: String, default: "icon"},
         titre: {type: String, default: "titre"},
-        cards: [],
+        // cards: [],
+    },
+    data () {
+        return {
+            cards: [
+        {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
+        {id:2, titre: 'formations', icon: 'mdi-school'},
+        {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
+        {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
+        {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
+        // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
+      ],
+        }
     },
     computed: {
         transition () {

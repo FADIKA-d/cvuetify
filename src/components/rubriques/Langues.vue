@@ -1,27 +1,26 @@
 <template>
-<div>
-<slot></slot>
-
-<h1 class="py-5 font-weight-bold purple--text text-uppercase">Langues</h1>
-<v-row align="center" justify="space-around">
-<v-progress-circular
-v-for="language in languages"
-    :key="language.id"
-    :rotate="55"
-    :size="200"
-    :width="30"
-    :src="language.src"
-    :value="language.level"
-    color="teal lighten-3"
-    
-    
->
-
-<img :src="require(`@/assets/${language.src}.png`)" height="150px" :alt="`${language.language}`" >
-
-</v-progress-circular>
-</v-row>    
-</div>
+    <div>
+        <slot></slot>
+        <v-container class="pa-4 text-center">
+            <h1 class="py-5 font-weight-bold purple--text text-uppercase">Langues</h1>
+            <template v-for="language in languages">
+                <v-row :key="language.id" align="center" justify="space-around">
+                    <v-col cols="3">
+                    <v-progress-circular
+                        :rotate="-90"
+                        :size="200"
+                        :width="30"
+                        :src="language.src"
+                        :value="language.level"
+                        color="teal lighten-3"
+                    >
+                        <img :src="require(`@/assets/${language.src}.png`)" height="150px" :alt="`${language.language}`" >
+                    </v-progress-circular>
+                    </v-col>
+                </v-row>
+            </template>  
+        </v-container>  
+    </div>
 </template>
 
 <script>

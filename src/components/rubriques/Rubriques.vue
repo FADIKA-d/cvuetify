@@ -1,7 +1,6 @@
 <template>
 <div>
 <slot></slot>
-<router-view></router-view>
 <v-row class="d-flex justify-center ma-5">
           <v-btn
               relative

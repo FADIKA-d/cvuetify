@@ -1,31 +1,29 @@
 <template>
 <div>
 <slot></slot>
-<v-container class="pa-4 ">
+<v-container class="pa-4  text-center">
 <h1 class="py-5 font-weight-bold purple--text text-uppercase">Compétences</h1>
-<div class="ml-10 pl-15">
- <v-row align="center" 
-v-for="skill in skills"
-    :key="skill.id"
-    class="pa-1"
-    >
- <v-col cols="4" class="pa-0 text-end ">
-    <v-icon>{{skill.icon}}</v-icon>
-</v-col>
-<v-col cols="7" >
-<v-progress-linear
-    v-model="skill.level"
-    :active="show"
-    buffer-value="bufferValue"
-    height="20"
-    color="teal lighten-3"
-    background-color="teal lighten-3"
-    :indeterminate="query"
-    :query="true"
->
-</v-progress-linear>
-</v-col>
-</v-row>
+<div >
+
+  <template v-for="skill in skills">
+   <v-row :key="skill.id" class="fill-height" justify="center" align="center">
+        <v-col cols="3" class="pa-0 text-end ">
+          <v-icon>{{skill.icon}}</v-icon>
+        </v-col>
+        <v-col cols="7" >
+          <v-progress-linear
+              v-model="skill.level"
+              buffer-value
+              height="20"
+              width= "100"
+              color="teal lighten-3"
+              readonly
+          >
+          </v-progress-linear>
+      </v-col>
+ </v-row>
+</template>
+
 </div>
   </v-container>
 </div>
@@ -87,7 +85,5 @@ export default {
 }
 </script>
 <style>
-
-
     
 </style>

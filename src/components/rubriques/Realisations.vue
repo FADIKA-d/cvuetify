@@ -1,7 +1,6 @@
 <template>
 <div>
 <slot></slot>
-<router-view></router-view>
     <v-container class="pa-4 text-center">
         <h1 class="py-5 font-weight-bold purple--text text-uppercase">Réalisations</h1>
         <v-row class="fill-height" align="center" justify="center">
