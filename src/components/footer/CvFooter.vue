@@ -12,10 +12,12 @@
       color= '#952175'
       flat
       tile>
-  <v-spacer></v-spacer>
-      <v-card-title class="teal lighten-3">
-      <strong class="subheading"> Pour en savoir plus sur moi : </strong>
+
+      <v-card-title class="teal lighten-3" justify-content= "end">
+      <router-link :to="{name: 'cv.rubriques'}" tag="button">Voir toutes les rubriques du cv</router-link>
       <v-spacer></v-spacer>
+      <strong class="subheading  font-weight-bold"> Pour en savoir plus sur moi : </strong>
+      
       <v-btn 
       text
       class="mx-4"
@@ -24,7 +26,8 @@
       :key="icon.ìd"
       :href="icon.href"
       >
-      <a :href="`${icon.href}`" ><v-icon size="24px" color="white"> {{icon.icon}} </v-icon></a>
+      <!-- <a :href="`${icon.href}`" ><v-icon size="24px" color="white"> {{icon.icon}} </v-icon></a> -->
+      <router-link to="`${icon.href}`" ><v-icon size="24px" color="white"> {{icon.icon}} </v-icon></router-link>
       </v-btn>
       </v-card-title >
   
@@ -49,4 +52,8 @@ export default {
 
 }
 </script>
-<style></style>
+<style>
+.v-footer {
+ position: relative; 
+}  
+  </style>

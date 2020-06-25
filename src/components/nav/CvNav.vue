@@ -10,7 +10,7 @@
 
       min-height="20"
       
-      scroll-target="#scrolling-technique"
+      scroll-target="#app"
     >
     <v-row padding="5">
     <v-col cols="12" md="3" class="" align-self-start>
@@ -27,16 +27,16 @@
               <v-card
               v-show="expand"
               color="white"
-              class="pa-0 ma-0"
+              class="pa-1 ma-1"
               >
                 <v-card-text
-                class="purple--text pa-0 ma-0"
+                class="purple--text pa-1 ma-1"
               
                 v-for="contact in contacts" 
                 :key="contact.id"
                 >
-                  <v-icon class="purple--text " > {{contact.icon}}</v-icon> {{contact.value}}
-                </v-card-text>
+                  <v-icon class="purple--text " > {{contact.icon}}</v-icon> {{contact.value}} 
+                  </v-card-text>
               </v-card>
           </v-expand-transition>
           <v-btn
@@ -51,7 +51,7 @@
         </v-row>
       <template v-slot:extension>
         <v-tabs optional
-        slider-color="purple"
+        slider-color='#952175'
         class="d-flex justify-center tabs">
           <v-tab v-for="categorie in categories" 
             :key="categorie.id"
@@ -60,6 +60,7 @@
           </v-tab>
           <v-divider vertical></v-divider>
         </v-tabs>
+        <router-link :to="{name: 'root'}" tag="button">cv</router-link>
       </template>
   </v-app-bar>
 </div>
@@ -80,7 +81,7 @@ export default {
           ],
           contacts: [ 
             {id:1, value: '06.58.41.48.72', icon: 'mdi-cellphone-android'},
-            {id:2, value: 'd.fadika@gmail.com', icon: 'mdi-gmail'  }, 
+            {id:2, value: 'd.fadika@gmail.com', icon: 'mdi-gmail'}, 
             // {id:3, value: 'FADIKA-d', icon: 'mdi-github'}, 
             // {id:4, value: 'Fadika Diaraye', icon: 'mdi-linkedin'}, 
           ],
