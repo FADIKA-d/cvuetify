@@ -14,7 +14,7 @@
       class="d-flex justify-space-around "
      >
 <v-card >
-      <v-card-title class="font-weight-bold purple--text ma-7">"{{education.field}}"</v-card-title> 
+      <v-card-title class="font-weight-bold purple--text align-justify ma-7">"{{education.field}}"</v-card-title> 
       <v-card-text>
           <v-row
             class="fill-height flex-inline"
@@ -47,10 +47,10 @@
          <v-row
             class="fill-height flex-inline"
             justify="space-between">
-            <p class="ma-1 subheading"> Lieu : </p>
+            <p class="ma-0 subheading"> Lieu : </p>
             <div>
             <p class="ma-0 body-1 font-weight-thin ">
-                {{education.institution}} - ({{education.place}})
+                {{education.institution}} ({{education.place}})
             </p>
             </div>         
          </v-row>

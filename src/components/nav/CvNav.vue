@@ -7,22 +7,20 @@
       color="teal lighten-3"
       dark
       shrink-on-scroll
-
       min-height="30"
-      
       scroll-target="#rubriques"
     >
-    <v-row padding="5">
-    <v-col cols="12" md="3" class="" align-self-start>
+    <v-row padding="">
+    <v-col cols="12" md="2" class="" align-self-start>
       <h2 id="name" class="subheading d-flex">DIARAYE</h2>
       <h2 id="lastName" class="subheading d-flex">FADIKA</h2>
     </v-col>
-      <v-col cols="12" md="6" class="d-flex justify-center " align-self="start">
-        <v-toolbar-title class="d-flex " align-self="start">
-        <h2 class="subheading font-weight-bold"> Developpeuse web et web mobile </h2> 
+      <v-col cols="12" md="8" class="d-flex "  >
+        <v-toolbar-title class="d-flex " >
+        <h2 class="d-flex " id="fonction"> Developpeuse web et web mobile </h2> 
         </v-toolbar-title>
       </v-col >
-        <v-col cols="12" md="3" class="d-flex justify-end mt-2 pt-2">
+        <v-col cols="12" md="2" class="d-flex justify-end mt-2 pt-2">
           <v-expand-transition >
               <v-card
               v-show="expand"
@@ -57,8 +55,8 @@
             :key="categorie.id"
             >
             <router-link :to="{name: `${categorie.titre}`}"><v-icon color="white"> {{categorie.icon}}</v-icon></router-link>
-          </v-tab>
           <v-divider vertical></v-divider>
+          </v-tab>
         </v-tabs>
         <router-link :to="{name: 'root'}" tag="button">cv</router-link>
       </template>
@@ -92,27 +90,16 @@ export default {
 }
 </script>
 <style>
-#name {
-      font-family: 'Acme', sans-serif;
+#name #lastName {
 
     font-family: 'Changa', sans-serif;
-
-    font-family: 'DM Mono', monospace;
-
-    font-family: 'Sriracha', cursive;
-
-    font-family: 'Syncopate', sans-serif;
 }
-.lastName
-{
-      font-family: 'Acme', sans-serif;
-
-    font-family: 'Changa', sans-serif;
-
-    font-family: 'DM Mono', monospace;
-
-    font-family: 'Sriracha', cursive;
+#fonction {
 
     font-family: 'Syncopate', sans-serif;
+    white-space: pre-wrap;
+    padding-bottom: 5em;
+    text-justify: distribute;
+    text-align: center;
 }
 </style>

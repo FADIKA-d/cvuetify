@@ -69,7 +69,9 @@ export default {
 #rubriques {
   width: 100%;
   height: 100%;
-  margin-top: 13rem;
+  margin-top: 11rem;
+  font-family: 'Changa', sans-serif;
+  /* font-family: 'Syncopate', sans-serif; */
 }
 .v-parallax__image
 { 
@@ -79,8 +81,8 @@ min-height: 70%;
 .v-parallax {
   /* largeur de l'image (80)*/
   width: 80%;
-  /* hauteur de l'image (56)*/
-  height: 56rem;
+  /* hauteur de l'image (45)*/
+  height: 45rem;
   /* position: absolute; */
 }
 img.v-parallax__image {
