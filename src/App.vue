@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <div id="app">
- <!-- partie navigation -->
+      
+
+      <!-- partie navigation -->
       <div class="navigation">
         <!-- <cv-nav>
         </cv-nav> -->
@@ -10,7 +12,7 @@
       </div>
       
       <!-- contenue principal -->
-      <v-main>
+      <!-- <v-main> -->
           <!-- partie carousel  -->
        <div class="carousel d-block mt-10">
           <!-- router carousel  -->
@@ -36,7 +38,7 @@
           <div class="parallaxx">
             <router-view name="parallaxx"></router-view>
           </div>
-      </v-main>
+      <!-- </v-main> -->
         <!-- partie footer -->
         <div class="footer">
           <!-- <cv-footer >
@@ -106,24 +108,6 @@ export default {
 };
 </script>
 <style>
-/* .parallax-container {
- position: sticky;
-}
 
-#rubrique {
-  width: 100%;
-  height: 100%;
-  align-items: start;
-} */
-.v-parallax__image
-{ 
-  position: absolute;
-    /* width: 100%;
-  height: 100rem; */
-
-}
-/* .v-parallax {
-  width: 100%;
-} */
 
 </style>

@@ -8,9 +8,9 @@
       dark
       shrink-on-scroll
 
-      min-height="20"
+      min-height="30"
       
-      scroll-target="#app"
+      scroll-target="#rubriques"
     >
     <v-row padding="5">
     <v-col cols="12" md="3" class="" align-self-start>
