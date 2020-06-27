@@ -18,14 +18,8 @@ export default  [
         components: {
             // default: HelloWorld,
             navigation: CvNav,
-            // carousel: Carousel,
-            // carouselSlide: CarouselSlide,
-            formations: Formations,
-            parallaxx: Parallaxx,
-            experiences: Experiences,
-            competences: Competences,
-            realisations: Realisations,
-            langues: Langues,
+            carousel: Carousel,
+            carouselSlide: CarouselSlide,
             footer: CvFooter
         }, 
         name: 'root', 
@@ -38,7 +32,8 @@ export default  [
             footer: CvFooter
         }, 
         name: 'cv', 
-        children: [{
+        children: [
+        {
             path:'rubriques',
             components: {
                 navigation: CvNav,
@@ -50,16 +45,66 @@ export default  [
                 footer: CvFooter
             },
             name: 'cv.rubriques'
-        },{
-            path:'carousel', 
+        },
+        {
+            path: 'formations',  
             components: {
                 navigation: CvNav,
-                carousel: Carousel,
-                carouselSlide: CarouselSlide,
+                formations: Formations,
+                footer: CvFooter}, 
+            name: 'cv.formations'
+        },
+        {
+            path: 'experiences',  
+            components: {
+                navigation: CvNav,
+                experiences: Experiences,
                 footer: CvFooter
-            },
-            name: 'cv.carousel'
-        }
+            }, 
+            name: 'cv.expériences'
+        },
+        {
+            path: 'competences', 
+            components: {
+            navigation: CvNav,   
+            competences: Competences,
+            footer: CvFooter
+            }, 
+            name: 'cv.compétences'},
+        
+        {
+            path: 'realisations',  
+            components: {
+                navigation: CvNav, 
+                realisations: Realisations,
+                footer: CvFooter
+            }, 
+            name: 'cv.réalisations'
+        },
+        {
+            path: 'langues',  
+            components: {
+                navigation: CvNav,
+                langues: Langues,
+                footer: CvFooter
+            }, 
+            name: 'cv.langues'
+        },
+            
+        // {path: '/interets',  components: {
+        //     navigation: CvNav,
+        //     Interets: interets,
+        //     footer: CvFooter}, name: 'rubrique_interets'},
+        // {
+        //     path:'carousel', 
+        //     components: {
+        //         navigation: CvNav,
+        //         carousel: Carousel,
+        //         carouselSlide: CarouselSlide,
+        //         footer: CvFooter
+        //     },
+        //     name: 'cv.carousel'
+        // }
     ]
     },
    
@@ -122,10 +167,10 @@ export default  [
     //     langues: Langues,
     //     footer: CvFooter}, name: 'langues'},
         
-    // // {path: '/interets',  components: {
-    // //     navigation: CvNav,
-    // //     Interets: interets,
-    // //     footer: CvFooter}, name: 'rubrique_interets'},
+    // {path: '/interets',  components: {
+    //     navigation: CvNav,
+    //     Interets: interets,
+    //     footer: CvFooter}, name: 'rubrique_interets'},
 
     // {path: '/rubrique/:id',  components: {
     //     // default: HelloWorld,

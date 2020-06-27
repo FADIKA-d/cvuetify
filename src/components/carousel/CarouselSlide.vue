@@ -1,12 +1,13 @@
 <template>
-
+<div>
 <transition :name="transition">
 <div v-show="visible">
 <slot></slot>
 
     <div class="card__item ">
-        <v-card width="600" class="">
-            <v-card-title class="slide__card">
+         
+        <v-card width="600" class="slide__card">
+            <v-card-title class="slide__title">
                 <v-icon x-large> {{icon}} </v-icon>
             </v-card-title>
             <v-card-text class="text-uppercase"> {{titre}}</v-card-text>
@@ -14,29 +15,23 @@
             <!-- <v-card-action> </v-card-action> -->
             <router-link :to="{name: `${titre}`}"> Voir les toutes les {{titre}} </router-link>
         </v-card>
+                
     </div>
 </div>
 </transition>
+</div>
 </template>
 
 <script>
 export default {
     props: {
         index: {type: Number, default: 0},
-        icon: {type: String, default: "icon"},
         titre: {type: String, default: "titre"},
-        // cards: [],
+        cards: [],
     },
     data () {
         return {
-            cards: [
-        {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
-        {id:2, titre: 'formations', icon: 'mdi-school'},
-        {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
-        {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
-        {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
-        // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
-      ],
+      
         }
     },
     computed: {
@@ -50,13 +45,13 @@ export default {
 }
 </script>
 <style>
-.slide__card {
+
+
+.slide__title {
     justify-content: center;
 }
 .card__item {
     text-align: center;
-    position: relative;
-    left: 35%;
 }
 .slide-right-enter-active { 
      animation : slideRightIn 5s; 

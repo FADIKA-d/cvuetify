@@ -54,7 +54,7 @@
           <v-tab v-for="categorie in categories" 
             :key="categorie.id"
             >
-            <router-link :to="{name: `cv.${categorie.titre}`}"><v-icon color="white"> {{categorie.icon}}</v-icon></router-link>
+            <router-link :to="{name: `${categorie.titre}`}"><v-icon color="white"> {{categorie.icon}}</v-icon></router-link>
           <v-spacer></v-spacer>
           <v-divider vertical></v-divider>
           </v-tab>

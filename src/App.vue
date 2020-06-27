@@ -13,28 +13,15 @@
       
       <!-- contenue principal -->
       <!-- <v-main> -->
+        <!-- <v-sheet height="470px"> -->
           <!-- partie carousel  -->
-       <div class="carousel d-block mt-10">
+       
+         <div class="carousel d-block mt-10">
           <!-- router carousel  -->
-          <router-view name="carousel">
-            <div class="carouselSlide">
-            <router-view name="carouselSlide"></router-view>
-            </div>
-          </router-view> 
-          <carousel class="carousel d-block mt-10">
-            <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
-            </carousel-slide>
-          </carousel>
-              <!-- <v-row class="d-flex justify-center ma-5">
-                <v-btn
-                relative
-                dark
-                fab
-                color="#952175"
-                ><router-link :to="{name: 'bottom'}" tag="button"><v-icon >mdi-chevron-double-down</v-icon></router-link>
-                </v-btn>
-              </v-row>  -->
+          <router-view name="carousel"></router-view> 
          </div>    
+     
+        <!-- </v-sheet> -->
           <div class="parallaxx">
             <router-view name="parallaxx"></router-view>
           </div>
@@ -68,17 +55,7 @@ export default {
   name: 'App',
   data() {
     return {
-      cards: [
-        {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
-        {id:2, titre: 'formations', icon: 'mdi-school'},
-        {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
-        {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
-        {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
-        // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
-      ],
-      contact: [
-        {id:1, phone: "0658414872", mail: 'd.fadika@gmail.com', adress: '14 Avenue Buffon', linkedin: 'Fadika' , github: 'FADIKA-d'}
-      ]       
+           
     }
   },
   

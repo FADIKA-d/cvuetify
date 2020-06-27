@@ -1,13 +1,13 @@
 <template>
-    <div class="carousel">
+    <div >
         <slot></slot>
-        <div class="carouselSlide">
-            <router-view name="carouselSlide"></router-view>
-            </div> -->
-        <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
-            </carousel-slide> 
-
-            
+        <div class="carouselSlide d-flex justify-center">
+            <template v-for="card in cards">
+            <carousel-slide  :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+            <!-- <router-view name="carouselSlide"></router-view> -->
+                </carousel-slide> 
+            </template>
+        </div>
         <v-btn icon class="carousel__nav carousel__prev" @click.prevent="prevent" 
                 color="#952175"
                 dark
@@ -24,32 +24,54 @@
                 fab
                 ><v-icon x-large>mdi-chevron-right-box-outline</v-icon> </v-btn>
         <div class="carousel__pagination">
-            <button v-for="n in slidesCount" :key="n.i" @click="goto(n-1)" :class="{active: n-1 == index}"
+            <button v-for="n in cardsCount" :key="n.i" @click="goto(n-1)" :class="{active: n-1 == index}"
             ></button>
         </div>
+        
+        <v-row class="d-flex justify-center ma-5">
+          <v-btn
+            relative
+            dark
+            fab
+            color="#952175"
+            >
+            <router-link :to="{name: 'bottom'}" tag="button"><v-icon >mdi-chevron-double-down</v-icon></router-link>
+          </v-btn>
+          </v-row> 
     </div>
 </template>
 
 <script>
+import CarouselSlide from '@/components/carousel/CarouselSlide';
+
 export default {
     data () {
         return {
             index: 0, 
-            slides: [],
             direction: 'right', 
-                               
+            cards: [
+                {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
+                {id:2, titre: 'formations', icon: 'mdi-school'},
+                {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
+                {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
+                {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
+                // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
+        ],                   
         }
     },
+     components: {
+    CarouselSlide, 
+     },
     computed: {
-        slidesCount() { 
-            return this.slides.length 
+        cardsCount() { 
+            return this.cards.length 
         }
     },
     methods: {
         next () {
             this.index ++
             this.direction = 'right'
-             if (this.index >= this.slidesCount) {
+             if (this.index >= this.cardsCount) {
                  this.index = 0
              }
         },
@@ -57,24 +79,20 @@ export default {
             this.index --
             this.direction= 'left'
              if (this.index < 0) {
-                 this.index = this.slidesCount - 1
+                 this.index = this.cardsCount - 1
              }
         }, 
         goto (index) {
             this.direction = index > this.index ? 'right' : 'left'
             this.index = index
         }
-    }, 
-    mounted() {
-        this.slides = this.$children
-    },
+    }
 }
 </script>
 <style>
 .carousel {
     position: relative;
 }
-
 .carousel__pagination {
     position: relative;
     bottom: 0px;
