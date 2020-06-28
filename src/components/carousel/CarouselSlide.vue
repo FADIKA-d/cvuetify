@@ -2,7 +2,7 @@
 <div>
 <transition :name="transition">
 <div v-show="visible">
-<slot></slot>
+
 
     <div class="card__item ">
          
@@ -15,7 +15,7 @@
             <!-- <v-card-action> </v-card-action> -->
             <router-link :to="{name: `${titre}`}"> Voir les toutes les {{titre}} </router-link>
         </v-card>
-                
+             
     </div>
 </div>
 </transition>
@@ -27,6 +27,7 @@ export default {
     props: {
         index: {type: Number, default: 0},
         titre: {type: String, default: "titre"},
+        icon: {type: String, default: "icon"},
         cards: [],
     },
     data () {

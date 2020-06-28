@@ -2,11 +2,11 @@
     <div >
         <slot></slot>
         <div class="carouselSlide d-flex justify-center">
-            <template v-for="card in cards">
-            <carousel-slide  :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+           
+            <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
             <!-- <router-view name="carouselSlide"></router-view> -->
                 </carousel-slide> 
-            </template>
+           
         </div>
         <v-btn icon class="carousel__nav carousel__prev" @click.prevent="prevent" 
                 color="#952175"
