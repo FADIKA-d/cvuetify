@@ -2,7 +2,7 @@
 <div>
 <slot></slot>
 <v-container class="pa-4  text-center">
-<h1 class="py-5 font-weight-bold purple--text text-uppercase">Compétences</h1>
+<h1 class="py-5 font-weight-bold text-uppercase titre__rubrique">Compétences</h1>
 
   <template v-for="skill in skills">
 <div :key="skill.id">
@@ -15,12 +15,12 @@
               :value="skill.level"
               height="20"
               width= "100"
-              color="teal lighten-3"
+              color="#BB334F"
               stream
               buffer-value="0"
           >
           <template v-slot="{ value }">
-        <strong class="text-end">{{ Math.ceil(value) }}%</strong>
+        <strong class="text-end white--text">{{ Math.ceil(value) }}%</strong>
       </template>
           </v-progress-linear>
       </v-col>

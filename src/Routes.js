@@ -16,20 +16,28 @@ export default  [
     {
         path: '/', 
         components: {
-            // default: HelloWorld,
-            navigation: CvNav,
-            carousel: Carousel,
-            carouselSlide: CarouselSlide,
-            footer: CvFooter
+            main: Parallaxx,  
         }, 
-        name: 'root', 
+        name: 'accueil', 
+        children: [
+            {
+                path:'rubriques',
+                components: {
+                    carousel: Carousel,
+                    carouselSlide: CarouselSlide,
+                    formations: Formations,
+                    experiences: Experiences,
+                    competences: Competences,
+                    realisations: Realisations,
+                    langues: Langues
+                },
+                name: 'accueil.rubriques'
+            }]
     },
     {
     path: '/cv', 
         components: {
-            navigation: CvNav,
-            parallaxx: Parallaxx,
-            footer: CvFooter
+            main: Parallaxx,  
         }, 
         name: 'cv', 
         children: [
@@ -37,6 +45,8 @@ export default  [
             path:'rubriques',
             components: {
                 navigation: CvNav,
+                carousel: Carousel,
+                carouselSlide: CarouselSlide,
                 formations: Formations,
                 experiences: Experiences,
                 competences: Competences,

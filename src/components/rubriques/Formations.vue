@@ -1,8 +1,10 @@
 <template>
 <div>
 <slot></slot>
-<v-container class="pa-4 text-center">
-<h1 class="py-5 font-weight-bold purple--text text-uppercase">Formations</h1>
+<v-container class="pa-3 text-center">
+
+<h1 class="py-5 pa-2 font-weight-bold text-uppercase titre__rubrique">Formations</h1>
+
 <v-row class="fill-height" justify="space-between">
  <template v-for="education in educations">
 <v-col :key="education.id"
@@ -14,42 +16,41 @@
       class="d-flex justify-space-around "
      >
 <v-card >
-      <v-card-title class="font-weight-bold purple--text align-justify ma-7">"{{education.field}}"</v-card-title> 
+      <v-card-title class="font-weight-bold align-justify card__rubrique ma-0 body-1">{{education.field}}</v-card-title> 
       <v-card-text>
           <v-row
-            class="fill-height flex-inline"
+            class="fill-height flex-inline formation__row"
             justify="space-between">
-            <p class="ma-1 subheading"> Diplôme : </p>
+            <p class="mt-0 ml-0"> Diplôme : </p>
             <div>
-            <p class="ma-0 body-1 font-weight-thin ">
+            <p class="ma-0">
                 {{education.grade}}
             </p>
             </div>         
          </v-row>
           
           <v-row
-            class="fill-height flex-inline"
+            class="fill-height flex-inline formation__row"
             justify="space-between">
-            <p class="mt-4 ml-1 subheading "> Niveau : </p>
+            <p class="mt-0 ml-0 subheading "> Niveau : </p>
             <div>
-            <p class="ma-0 body-1 font-weight-thin  ">
+            <p class="ma-0">
                 <v-rating
             rating="full-icon"
             :length="education.degree"
             readonly
-            background-color="purple"
-            color="purple"
-            size="33">
+            background-color="#BB334F"
+            size="30">
             </v-rating> 
             </p>
             </div>    
          </v-row>
          <v-row
-            class="fill-height flex-inline"
+            class="fill-height flex-inline formation__row"
             justify="space-between">
-            <p class="ma-0 subheading"> Lieu : </p>
+            <p class="ma-0"> Lieu : </p>
             <div>
-            <p class="ma-0 body-1 font-weight-thin ">
+            <p class="ma-0 ">
                 {{education.institution}} ({{education.place}})
             </p>
             </div>         
@@ -70,9 +71,16 @@ export default {
          educations: [
         {id:1, degree:'2', grade: 'Tire professionnel (BAC + 2)', year: 2020, field: 'Développeur Web et Web mobile', institution: 'Afpa', place: 'Amiens'},
         {id:2, degree:'5', grade: 'Master 2 (BAC +5)', year: 2011, field: 'Stratégie d’entreprise et économie industrielle', institution: 'Panthéon-Assas ', place: 'Paris'},
-        {id:3, degree:'5', grade: 'Master 2 (BAC +5)', year: 2010, field: 'Economie industrielle et veille stratégique', institution: 'Montesquieu-Bordeaux 4 ', place: 'Bordeaux'}
+        {id:3, degree:'5', grade: 'Master 2 (BAC +5)', year: 2010, field: 'Economie industrielle et veille stratégique', institution: 'Montesquieu-Bordeaux 4', place: 'Bordeaux'}
         ]
         }
 }}
 </script>
-<style></style>
+<style>
+.formation__row {
+    font-size: 0.9rem;
+}
+.v-rating .v-icon {
+padding: 0rem;
+}
+</style>

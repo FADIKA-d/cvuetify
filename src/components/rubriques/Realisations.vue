@@ -2,7 +2,7 @@
 <div>
 <slot></slot>
     <v-container class="pa-4 text-center">
-        <h1 class="py-5 font-weight-bold purple--text text-uppercase">Réalisations</h1>
+        <h1 class="py-5 font-weight-bold  text-uppercase titre__rubrique">Réalisations</h1>
         <v-row class="fill-height" align="center" justify="center">
             <template v-for="realisation in realisations">
                 <v-col :key="realisation.id" cols="12" md="4">
@@ -26,7 +26,7 @@
                                     :class="{ 'show-btns': hover }"
                                     x-large
                                     dark
-                                    color="purple">
+                                    color="#BB334F">
                                         mdi-eye
                                     </v-icon>
                                 </a>
@@ -61,9 +61,9 @@ export default {
         return {
          transparent:'rgba(225, 255, 255, 0)',
          realisations: [
-            {id:1, titre: 'Site internet', theme: 'Jardinage', text: 'Site avec fonctionnalités: menu, espaceutilisateur, catalogue produit, formulaire de contact', href: 'dev.amorce.org/dfadika/jarditou', image: "jarditou"},
+            {id:1, titre: 'Site Internet', theme: 'Jardinage', text: 'Site avec fonctionnalités: menu, espace utilisateur, catalogue produit, formulaire de contact', href: 'dev.amorce.org/dfadika/jarditou', image: "jarditou"},
             {id:2, titre: 'Site WordPress', theme: 'Youpi', text: 'Installationet configuration d\'un site e-commerce avec section blog. Création d\'un thème et d\'un plugin', href: 'dev.amorce.org/dfadika/wordpress', image: "wordpress"},
-            {id:3, titre: 'Application web', theme: 'Cinéma', text: 'Création d\'une application de recherche de films avec l\'API "TheMovieDB"', href: 'dev.amorce.org/dfadika/wordpress', image: "cinema"} 
+            {id:3, titre: 'Application Web', theme: 'Cinéma', text: 'Création d\'une application de recherche de films avec l\'API "TheMovieDB"', href: 'dev.amorce.org/dfadika/wordpress', image: "cinema"} 
          ],
          expand: false,
         expand2: false,

@@ -1,7 +1,7 @@
 <template>
 <div>
 <slot></slot>
-<h1 class="py-5 font-weight-bold purple--text text-uppercase">Intérêts</h1>
+<h1 class="py-5 font-weight-bold text-uppercase titre__rubrique">Intérêts</h1>
 
         
 </div>

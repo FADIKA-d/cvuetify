@@ -8,10 +8,10 @@
         width="auto"
         class="parallax"
         cover
-        :src="require('./../assets/top_keyboard.jpg')"
+        :src="require('./../assets/ordi.jpg')"
       >
-        <!-- partie rubriques -->
-        <div class="rubriques overflow-y-auto overflow-x-hidden" id="rubriques">
+  <!-- partie rubriques -->
+        <div class="rubriques overflow-y-auto overflow-x-hidden d-flex-inline" id="rubriques">
           <!-- <router-link :to="{name: 'sous.formations'}"> sous rubrique </router-link>
        <router-link :to="{name: 'sous.experiences'}"> sous rubrique </router-link>
        <router-link :to="{name: 'sous.competences'}"> sous rubrique </router-link>
@@ -48,15 +48,19 @@
 
           <!-- </rubriques> -->
           <!-- router rubriques -->
+           <!-- <router-view name="rubriques"></router-view> -->
         </div>
       </v-parallax>
-      <!-- <router-view name="rubriques"></router-view> -->
     </div>
   </div>
 </template>
 <script>
 export default {
-  data() {}
+  data () {
+    return {
+
+    }
+  }
 };
 </script>
 
@@ -65,31 +69,43 @@ export default {
  position: relative;
  justify-content: center;
 }
-
+.titre__rubrique {
+  background-color: #90a4aebe;
+  color: white;
+  margin-bottom: 1rem;
+}
 #rubriques {
-  width: 100%;
+  width: 49%;
   height: 100%;
-  margin-top: 11rem;
+  margin-top: 14rem;
+  margin-bottom: 23rem;
   font-family: 'Changa', sans-serif;
+  
   /* font-family: 'Syncopate', sans-serif; */
+}
+.v-parallax__content {
+  align-items: center;
+
 }
 .v-parallax__image
 { 
     /* hauteure minimale de l'image 70% */
-min-height: 70%;
+min-height: 80%;
 }
 .v-parallax {
   /* largeur de l'image (80)*/
-  width: 80%;
+  width: 100%;
   /* hauteur de l'image (45)*/
-  height: 45rem;
+  height: 70rem;
   /* position: absolute; */
 }
 img.v-parallax__image {
     /* image du parallax au maximum */
- max-width: 100%;
+ max-width: 120%;
 }
-
+.card__rubrique {
+    color:#BB334F; 
+}
 
 
 

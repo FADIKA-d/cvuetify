@@ -3,27 +3,26 @@
 <slot></slot>
 <v-footer
       dark
-      color="teal lighten-3"
       padless
-      absolute
+     height="10"
       >
       <v-card
       class="flex"
-      color= '#952175'
+      color= '#BB334F'
       flat
       tile>
 
-      <v-card-title class="teal lighten-3" justify-content= "end">
+      <v-card-title class="blue-grey lighten-3 pa-0" justify-content= "end">
       <router-link :to="{name: 'cv.rubriques'}" tag="button">Voir toutes les rubriques du cv</router-link>
       <v-spacer></v-spacer>
       <strong class="subheading  font-weight-bold"> Pour en savoir plus sur moi : </strong>
       
       <v-btn 
       text
-      class="mx-4"
+      class=""
       dark
       v-for="icon in icons" 
-      :key="icon.ìd"
+      :key="icon.id"
       :href="icon.href"
       >
       <!-- <a :href="`${icon.href}`" ><v-icon size="24px" color="white"> {{icon.icon}} </v-icon></a> -->
@@ -53,7 +52,5 @@ export default {
 }
 </script>
 <style>
-.v-footer {
- position: relative; 
-}  
+
   </style>

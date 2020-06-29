@@ -1,9 +1,14 @@
 <template>
-    <div >
+    <div class="carousel">
         <slot></slot>
         <div class="carouselSlide d-flex justify-center">
            
-            <carousel-slide v-for="card in cards" :key="card.id" :index="card.id-1" :titre="card.titre" :icon="card.icon">
+            <carousel-slide v-for="card in cards" 
+            :key="card.id" 
+            :index="card.id-1" 
+            :titre="card.titre" 
+            :icon="card.icon" 
+            :last="card.last">
             <!-- <router-view name="carouselSlide"></router-view> -->
                 </carousel-slide> 
            
@@ -50,11 +55,11 @@ export default {
             index: 0, 
             direction: 'right', 
             cards: [
-                {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant'},
-                {id:2, titre: 'formations', icon: 'mdi-school'},
-                {id:3, titre: 'compétences', icon: 'mdi-cog-transfer'},
-                {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple'},
-                {id:5, titre: 'langues', icon: 'mdi-chat-processing'},
+                {id:1, titre: 'expériences', icon: 'mdi-briefcase-variant', last: {info: 'Chargé d\'études et de veille stratégique'}},
+                {id:2, titre: 'formations', icon: 'mdi-school', last: {info: 'Tire professionnel (BAC + 2) : Développeur Web et Web mobile'}},
+                {id:3, titre: 'compétences', icon: 'mdi-cog-transfer', last: {info:'HTML5 | CSS3 | Javascript | Vue.js | Bootstrap | JQuery | PHP | Wordpress | MySQL | CodeIgniter'}},
+                {id:4, titre: 'réalisations', icon: 'mdi-clipboard-check-multiple', last: {info:'Site internet | Site WordPress | Application web'}},
+                {id:5, titre: 'langues', icon: 'mdi-chat-processing', last: {info:'Français | Anglais | Espagnol'}},
                 // {id:6, titre: 'centre d\'intérêts', icon: 'mdi-head-heart'} 
         ],                   
         }
