@@ -19,10 +19,7 @@
           <router-view name="carousel"></router-view> 
          </div>     
      <div class="main pt-0" id="main">
-       
        <router-view name="main"> </router-view>
-
-
 
 
               <v-card class="bouton__voir">
@@ -34,12 +31,9 @@
                 {{ !hidden ? 'voir le cv' : '' }}</router-link>
               </v-btn>
            </v-card>
-    
-
-
-
-
-
+           <div>
+    <pdf scr="./assets/cinema.png"></pdf></div>
+    <v-pdf src="./assets/CVFADIKA.pdf" style="display: inline-block; width: 25%"></v-pdf>
 
 
      </div>
@@ -58,7 +52,7 @@
 <script>
 // import Carousel from './components/carousel/Carousel';
 // import CarouselSlide from './components/carousel/CarouselSlide';
-import CvNav from './components/nav/CvNav';
+import CvNav from './components/nav/CvNav'
 import CvFooter from './components/footer/CvFooter'
 // import Rubriques from './components/rubriques/Rubriques'
 // import Experiences from './components/rubriques/Experiences'
@@ -69,12 +63,14 @@ import CvFooter from './components/footer/CvFooter'
 // import Interets from './components/rubriques/Interets'
 // import Parallax from "vue-parallaxy"
 // import axios from 'axios'
+import pdf from 'vue-pdf'
 
 export default {
   name: 'App',
   data() {
     return {
            hidden: false,
+           pdf: ""
     }
   },
   
@@ -91,6 +87,7 @@ export default {
     // Langues,
     // Interets,
     // Parallax
+    pdf
   },
    mounted () {
      
@@ -110,6 +107,6 @@ export default {
   margin: 0px;
 }
 .boutton__voir {
-  
+
 }
 </style>
