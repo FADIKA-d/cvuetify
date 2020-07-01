@@ -16,15 +16,14 @@ export default  [
     {
         path: '/', 
         components: {
-            main: Parallaxx,  
+            
+             main: Parallaxx,  
         }, 
         name: 'accueil', 
         children: [
             {
                 path:'rubriques',
                 components: {
-                    carousel: Carousel,
-                    carouselSlide: CarouselSlide,
                     formations: Formations,
                     experiences: Experiences,
                     competences: Competences,
@@ -32,7 +31,17 @@ export default  [
                     langues: Langues
                 },
                 name: 'accueil.rubriques'
-            }]
+            },
+            {
+                path:'carousel', 
+                components: {
+                    carousel: Carousel,
+                    carouselSlide: CarouselSlide,
+                },
+                name: 'accueil.carousel'
+            }
+        
+        ]
     },
     {
     path: '/cv', 

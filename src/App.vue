@@ -11,14 +11,37 @@
       </div>
       
       <!-- contenue principal -->
-      <v-main>  
+      <v-main style="padding:0px"> 
+         
          <!-- partie carousel  -->
          <div class="carousel d-block mt-10">
           <!-- router carousel  -->
-          <!-- <router-view name="carousel"></router-view>  -->
+          <router-view name="carousel"></router-view> 
          </div>     
-     <div class="main" id="main">
-       <router-view name="main"></router-view>
+     <div class="main pt-0" id="main">
+       
+       <router-view name="main"> </router-view>
+
+
+
+
+              <v-card class="bouton__voir">
+              <v-btn  v-show="!hidden" color="#BB334F" dark
+                absolute
+                fab
+                x-large
+                @click="hidden =!hidden"><router-link :to="{name: 'accueil.rubriques'}" tag="button">
+                {{ !hidden ? 'voir le cv' : '' }}</router-link>
+              </v-btn>
+           </v-card>
+    
+
+
+
+
+
+
+
      </div>
       </v-main>
        
@@ -51,7 +74,7 @@ export default {
   name: 'App',
   data() {
     return {
-           
+           hidden: false,
     }
   },
   
@@ -82,5 +105,11 @@ export default {
 </script>
 <style>
 
-
+#main {
+  padding: 0px;
+  margin: 0px;
+}
+.boutton__voir {
+  
+}
 </style>

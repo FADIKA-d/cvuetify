@@ -18,8 +18,8 @@
           <v-parallax
           height="auto"
           width="auto"
-          class="parallax w-25"
-          :src="require('../../assets/top_keyboard.jpg')"
+          class="parallax"
+          :src="require('../../assets/ordi.jpg')"
           >
             <rubriques id="rubrique" class="d-block text-center" justify="start">
               <div class="formations" id="formations">

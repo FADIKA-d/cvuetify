@@ -2,7 +2,7 @@
 <div>
 <slot></slot>
 <v-container class="pa-4  text-center">
-<h1 class="py-5 font-weight-bold text-uppercase titre__rubrique">Compétences</h1>
+<h1 class="pa-1  font-weight-bold text-uppercase titre__rubrique">Compétences</h1>
 
   <template v-for="skill in skills">
 <div :key="skill.id">

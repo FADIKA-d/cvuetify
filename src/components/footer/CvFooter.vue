@@ -8,12 +8,12 @@
       >
       <v-card
       class="flex"
-      color= '#BB334F'
+      color= 'blue-grey lighten-3'
       flat
       tile>
 
-      <v-card-title class="blue-grey lighten-3 pa-0" justify-content= "end">
-      <router-link :to="{name: 'cv.rubriques'}" tag="button">Voir toutes les rubriques du cv</router-link>
+      <v-card-title class="footer__card pa-0" justify-content= "end">
+      <router-link :to="{name: 'accueil.rubriques'}" tag="button">Voir toutes les rubriques du cv</router-link>
       <v-spacer></v-spacer>
       <strong class="subheading  font-weight-bold"> Pour en savoir plus sur moi : </strong>
       
@@ -52,5 +52,7 @@ export default {
 }
 </script>
 <style>
-
+.footer__card {
+  background-color: #BB334F;
+}
   </style>

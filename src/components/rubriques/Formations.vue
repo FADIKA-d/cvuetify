@@ -3,7 +3,7 @@
 <slot></slot>
 <v-container class="pa-3 text-center">
 
-<h1 class="py-5 pa-2 font-weight-bold text-uppercase titre__rubrique">Formations</h1>
+<h1 class="pa-1 font-weight-bold text-uppercase titre__rubrique">Formations</h1>
 
 <v-row class="fill-height" justify="space-between">
  <template v-for="education in educations">

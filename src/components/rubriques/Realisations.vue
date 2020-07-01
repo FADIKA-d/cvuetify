@@ -2,7 +2,7 @@
 <div>
 <slot></slot>
     <v-container class="pa-4 text-center">
-        <h1 class="py-5 font-weight-bold  text-uppercase titre__rubrique">Réalisations</h1>
+        <h1 class="pa-1 font-weight-bold  text-uppercase titre__rubrique">Réalisations</h1>
         <v-row class="fill-height" align="center" justify="center">
             <template v-for="realisation in realisations">
                 <v-col :key="realisation.id" cols="12" md="4">

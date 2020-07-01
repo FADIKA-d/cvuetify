@@ -4,8 +4,8 @@
 
     <div class="parallax-container d-flex align-start">
       <v-parallax
-        height="auto"
-        width="auto"
+        height=""
+        width=""
         class="parallax"
         cover
         :src="require('./../assets/ordi.jpg')"
@@ -67,41 +67,38 @@ export default {
 <style>
 .parallax-container {
  position: relative;
- justify-content: center;
 }
 .titre__rubrique {
   background-color: #90a4aebe;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  height: 3rem;
 }
 #rubriques {
-  width: 49%;
+  width: 40%;
   height: 100%;
-  margin-top: 14rem;
-  margin-bottom: 23rem;
+  margin-top: 21rem;
+  margin-bottom: 12rem;
   font-family: 'Changa', sans-serif;
   
   /* font-family: 'Syncopate', sans-serif; */
 }
 .v-parallax__content {
   align-items: center;
-
 }
 .v-parallax__image
 { 
-    /* hauteure minimale de l'image 70% */
-min-height: 80%;
+/* taille image du parallax (75rem) */
+ height: 73rem;
+ /* paddinf top de l'image 5 rem */
+top: 0;
 }
 .v-parallax {
-  /* largeur de l'image (80)*/
+  /* largeur de l'image (100)*/
   width: 100%;
-  /* hauteur de l'image (45)*/
-  height: 70rem;
+  /* hauteur de l'image (64)*/
+  height: 64rem;
   /* position: absolute; */
-}
-img.v-parallax__image {
-    /* image du parallax au maximum */
- max-width: 120%;
 }
 .card__rubrique {
     color:#BB334F; 

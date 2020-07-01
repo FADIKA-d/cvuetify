@@ -2,7 +2,7 @@
 <div>
 <slot></slot>
 <v-container class="pa-4 text-center">
-  <h1 class="py-5 font-weight-bold text-uppercase titre__rubrique">Expériences</h1>
+  <h1 class="pa-1 font-weight-bold text-uppercase titre__rubrique">Expériences</h1>
   <v-timeline dense>
     <v-timeline-item
       v-for="experience in experiences"

@@ -2,7 +2,7 @@
     <div>
         <slot></slot>
         <v-container class="pa-4 text-center">
-            <h1 class="py-5 font-weight-bold text-uppercase titre__rubrique">Langues</h1>
+            <h1 class="pa-1 font-weight-bold text-uppercase titre__rubrique">Langues</h1>
               <v-row class="fill-height" justify="space-between">  
             <!-- <template v-for="language in languages">
                 <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
