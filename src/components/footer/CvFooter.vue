@@ -4,7 +4,6 @@
 <v-footer
       dark
       padless
-     height="10"
       >
       <v-card
       class="flex"
@@ -15,7 +14,7 @@
       <v-card-title class="footer__card pa-0" justify-content= "end">
       <router-link :to="{name: 'accueil.rubriques'}" tag="button">Voir toutes les rubriques du cv</router-link>
       <v-spacer></v-spacer>
-      <strong class="subheading  font-weight-bold"> Pour en savoir plus sur moi : </strong>
+      <strong class="subheading "> Pour en savoir plus sur moi : </strong>
       
       <v-btn 
       text
@@ -30,8 +29,8 @@
       </v-btn>
       </v-card-title >
   
-      <v-card-text class="py-0 white--text text-center" color="purple"> {{ new Date().getFullYear() }}</v-card-text>
       <v-card-text class="py-0 white--text text-center">Diaraye FADIKA</v-card-text>
+      <v-card-text class="py-0 white--text text-center " color="purple"> {{ new Date().getFullYear() }}</v-card-text>
       </v-card>
     </v-footer>
 </div>
@@ -55,4 +54,7 @@ export default {
 .footer__card {
   background-color: #BB334F;
 }
+/* .v-footer {
+position: absolute;
+} */
   </style>

@@ -2,16 +2,18 @@
   <div>
     <slot></slot>
 
-    <div class="parallax-container d-flex align-start">
+    <div class="parallax-container d-flex justify-center grey lighten-1 ">
+     
       <v-parallax
         height=""
         width=""
         class="parallax"
-        cover
+        align="center" 
         :src="require('./../assets/ordi.jpg')"
       >
+        
   <!-- partie rubriques -->
-        <div class="rubriques overflow-y-auto overflow-x-hidden d-flex-inline" id="rubriques">
+        <div class="rubriques overflow-y-auto overflow-x-hidden" id="rubriques">
           <!-- <router-link :to="{name: 'sous.formations'}"> sous rubrique </router-link>
        <router-link :to="{name: 'sous.experiences'}"> sous rubrique </router-link>
        <router-link :to="{name: 'sous.competences'}"> sous rubrique </router-link>
@@ -20,6 +22,16 @@
           <router-link :to="{name: 'post', params: { class: 'langues'} }"> essai</router-link>-->
           <!-- <rubriques id="rubrique" class="d-block text-center" justify="start"> -->
 
+          <div class="afficher" id="afficher">
+              <v-btn  v-show="!hidden" color="#BB334F" dark
+                fab
+                x-large
+                cover
+                @click="hidden =!hidden"><router-link :to="{name: 'accueil.rubriques'}" tag="button">
+                {{ !hidden ? 'voir le cv' : '' }}</router-link>
+              </v-btn>
+            
+          </div>
           <!-- <router-view></router-view> -->
           <div class="formations" id="formations">
             <!-- <formations id="formations"></formations> -->
@@ -50,7 +62,8 @@
           <!-- router rubriques -->
            <!-- <router-view name="rubriques"></router-view> -->
         </div>
-      </v-parallax>
+       
+       </v-parallax>
     </div>
   </div>
 </template>
@@ -58,6 +71,7 @@
 export default {
   data () {
     return {
+      hidden: false,
 
     }
   }
@@ -65,9 +79,9 @@ export default {
 </script>
 
 <style>
-.parallax-container {
+/* .parallax-container {
  position: relative;
-}
+} */
 .titre__rubrique {
   background-color: #90a4aebe;
   color: white;
@@ -85,23 +99,26 @@ export default {
 }
 .v-parallax__content {
   align-items: center;
+
 }
 .v-parallax__image
 { 
 /* taille image du parallax (75rem) */
- height: 73rem;
+ height: 10%;
+ /* width: 100%; */
  /* paddinf top de l'image 5 rem */
-top: 0;
+top: 10px;
 }
 .v-parallax {
+  
   /* largeur de l'image (100)*/
-  width: 100%;
+  width: 70%;
   /* hauteur de l'image (64)*/
-  height: 64rem;
+  /* height: 50%; */
   /* position: absolute; */
 }
 .card__rubrique {
-    color:#BB334F; 
+    color:#464545; 
 }
 
 

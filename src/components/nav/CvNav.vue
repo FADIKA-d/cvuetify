@@ -1,37 +1,42 @@
 <template >
 <div>
   <slot></slot>
+  <!-- Début de la barre de navigation -->
   <v-app-bar
- 
       app
       color="#BB334F"
       dark
       shrink-on-scroll
-      height="250"
+      :height="navHeight"
       scroll-target="#rubriques"
-    prominent
       :src="require('./../../assets/notes.jpg')"
       fade-img-on-scroll
-      scroll-threshold="500"
     >
+    <!-- template pour le fond du la barre de navigation -->
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)">
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)">
         </v-img>
          <!-- gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)" -->
          <!-- gradient="to top right, rgba(55,236,186,.7), rgba(25,32,72,.7)" -->
       </template>
-    <v-row padding="">
-    <v-col cols="12" md="2" class="" align-self-start>
-      <h2 id="name" class="subheading d-flex">DIARAYE</h2>
-      <h2 id="lastName" class="subheading d-flex">FADIKA</h2>
-    </v-col>
-      <v-col cols="12" md="8" class="d-flex justify-center">
-        <v-toolbar-title class="d-flex">
-        <h2 class="d-flex " id="fonction"> Developpeuse web et web mobile </h2> 
-        </v-toolbar-title>
-      </v-col >
+
+
+<!-- partie du nom et prénom -->
+    <!-- <v-row padding="">
+    <v-col cols="12" md="2" class="" align-self-start> -->
+      <h4 id="name" class="mt-1 d-flex text-uppercase">diaraye fadika</h4>
+      <v-spacer></v-spacer>
+      <!-- <h2 id="lastName" class="subheading d-flex text-uppercase"></h2> -->
+    <!-- </v-col>
+      <v-col cols="12" md="8" class="d-flex justify-center"> -->
+        <!-- <v-toolbar-title > -->
+        <h2 class="d-flex text-center mt-2" id="fonction"> Developpeuse web et web mobile </h2> 
+        <!-- </v-toolbar-title> -->
+      <!-- </v-col > -->
+
+<!-- partie infos contact
       <v-col cols="12" md="2" class="d-flex justify-end mt-2 pt-0 ml-0">
           <v-expand-transition >
               <v-card
@@ -57,16 +62,26 @@
             icon >
               <v-icon x-large> mdi-account-details</v-icon>
           </v-btn>
-      </v-col>
-        <v-col cols="12">
-<v-row justify="start">
+      </v-col> -->
+
+      <!-- Bouton cv -->
+        <!-- <v-col cols="12">
+<v-row justify="start"> -->
+        <v-spacer></v-spacer>
+       
     <v-btn
-      color="#BB334F"
-      background="white"
-      dark
+    v-scroll:#rubriques="onScroll"
+     v-model="shrinkOnScroll"
+     :color="offsetTop<90? '#BB334F' :  'white'"
+      dark 
       @click.stop="dialog = true"
+      absolute
+      bottom
+      right
     >
+    <span v-bind:class="`${colorText}--text`">
       CV papier
+      </span>
     </v-btn>
     <v-dialog
       v-model="dialog"
@@ -96,9 +111,9 @@
         <!-- </v-img> -->
       </v-card>
     </v-dialog>
-  </v-row>
-        </v-col>
-      </v-row>
+  <!-- </v-row>
+        </v-col> -->
+      <!-- </v-row> -->
       <template v-slot:extension>
         <v-tabs optional
         slider-color='#BB334F'
@@ -120,6 +135,9 @@
 
 <script>
 export default {
+  // props: {
+  //       cvButtonColor: {type: String, default: '#BB334F'}
+  //   },
     data () {
         return {
           categories: [ 
@@ -140,6 +158,12 @@ export default {
             expand2: false,
             dialog: false,
             publicPath: process.env.BASE_URL,
+            offsetTop: 0,
+            shrinkOnScroll: [true, false],
+            colorText: "white",
+            textRed: 'text-red',
+            textWhite: 'text-white',
+            navHeight: "100"
         }
     },
     watch: {
@@ -148,7 +172,46 @@ export default {
 
         setTimeout(() => (this.dialog = false), 4000)
       },
+      // isShrinkOnScroll() {
+      //   this.shrinkOnScroll = !this.shrinkOnScroll
+      // },
+      // buttonColor(shrinkOnScroll) {
+      //   if (shrinkOnScroll) {
+      //     return this.cvButtonColor ='blue'
+      //   }
+      // }
     },
+    // computed: {
+    //   cvButtonColor () {
+    //     return this.colorValue
+    //   },
+   
+  // },
+  methods: {
+    
+  //   buttonColor(shrinkOnScroll) {
+  //       if (shrinkOnScroll) {
+  //           this.colorValue = 'blue'
+  //       }
+  //     }
+  // cvButtonColor(shrinkOnScroll) {
+  //       if (shrinkOnScroll) {
+  //       this.colorValue = 'blue'
+  //       }
+  //       return this.colorValue
+  //     },
+  onScroll (e) {
+      this.offsetTop = e.target.scrollTop
+      if(this.offsetTop < 90) {
+        this.colorText = "#BB334F"
+      }
+      else {
+this.colorText = "red"
+      }
+      
+ 
+    }
+  }
 }
 </script>
 <style>
@@ -159,11 +222,11 @@ export default {
 #fonction {
 
     font-family: 'Syncopate', sans-serif;
-    white-space: pre-wrap;
-    font-size: 3rem;
+    /* white-space: pre-wrap; */
+    /* font-size: 2rem; */
     /* padding-bottom: 5em; */
     /* text-justify: distribute; */
-    text-align: center;
+    /* text-align: center; */
 }
 .cvtitre {
   text-align: center;

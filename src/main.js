@@ -3,11 +3,12 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import vuetify from './plugins/vuetify'
 import Routes from './Routes'
-
+// import Embed from 'v-video-embed'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+// Vue.use(Embed)
 
 const router = new VueRouter ( {
   routes: Routes,

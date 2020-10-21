@@ -1,41 +1,35 @@
 <template>
   <v-app>
     <div id="app">
-      
-
       <!-- partie navigation -->
       <div class="navigation">
         <cv-nav></cv-nav>
         <!-- router navigation -->
         <!-- <router-view name="navigation"></router-view> -->
       </div>
-      
       <!-- contenue principal -->
-      <v-main style="padding:0px"> 
-         
-         <!-- partie carousel  -->
-         <div class="carousel d-block mt-10">
+      <v-main class="d-flex" 
+      style="padding:0px"
+      > 
+      <!-- partie carousel  -->
+         <!-- <div class="carousel d-block mt-10"> -->
           <!-- router carousel  -->
-          <router-view name="carousel"></router-view> 
-         </div>     
-     <div class="main pt-0" id="main">
+          <!-- <router-view name="carousel"></router-view>  -->
+         <!-- </div>      -->
+     <div class="main pt-0 grey lighten-1 d-flex align-self-center align-end justify-center" 
+     :style="`max-height:${mainHeight}px`" 
+     id="main">
        <router-view name="main"> </router-view>
+    
+           <!-- <div>
+    <pdf scr="./assets/cinema.png"></pdf></div> -->
+    <!-- <v-pdf src="./assets/CVFADIKA.pdf" style="display: inline-block; width: 25%"></v-pdf> -->
 
-
-              <v-card class="bouton__voir">
-              <v-btn  v-show="!hidden" color="#BB334F" dark
-                absolute
-                fab
-                x-large
-                @click="hidden =!hidden"><router-link :to="{name: 'accueil.rubriques'}" tag="button">
-                {{ !hidden ? 'voir le cv' : '' }}</router-link>
-              </v-btn>
-           </v-card>
-           <div>
-    <pdf scr="./assets/cinema.png"></pdf></div>
-    <v-pdf src="./assets/CVFADIKA.pdf" style="display: inline-block; width: 25%"></v-pdf>
-
-
+<!-- <video-player>
+  <source src="https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_10mb.mp4" />
+  
+</video-player> -->
+<!-- <video-embed src="https://www.youtube.com/watch?v=s4ObxcdXoFE"></video-embed> -->
      </div>
       </v-main>
        
@@ -63,14 +57,17 @@ import CvFooter from './components/footer/CvFooter'
 // import Interets from './components/rubriques/Interets'
 // import Parallax from "vue-parallaxy"
 // import axios from 'axios'
-import pdf from 'vue-pdf'
+// import pdf from 'vue-pdf'
+// import videoPlayer from 'vue-md-player'
+// import 'vue-md-player/dist/vue-md-player.css'
+// import 'vuetify-media-player/src/style.styl'
 
 export default {
   name: 'App',
   data() {
     return {
-           hidden: false,
-           pdf: ""
+          //  mainStyle: "padding:0px"
+          //  pdf: ""
     }
   },
   
@@ -87,7 +84,8 @@ export default {
     // Langues,
     // Interets,
     // Parallax
-    pdf
+    // pdf,
+    // videoPlayer
   },
    mounted () {
      
@@ -96,7 +94,20 @@ export default {
       //  .get("../cv_infos.php")
       //  .then(result => {console.log(result.data); this.info= result.data})
      
-   }
+   },
+   computed: {
+      mainHeight () {
+        return this.$vuetify.breakpoint.height
+        // switch (this.$vuetify.breakpoint.name) {
+        //   case 'xs': return 220
+        //   case 'sm': return 300
+        //   case 'md': return 400
+        //   case 'lg': return 490
+        //   default: return 600
+        // }
+      }
+      
+    },
    
 };
 </script>
@@ -105,8 +116,9 @@ export default {
 #main {
   padding: 0px;
   margin: 0px;
-}
-.boutton__voir {
 
 }
+/* .boutton__voir {
+
+} */
 </style>

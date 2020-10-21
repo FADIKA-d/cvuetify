@@ -8,7 +8,9 @@ import Formations from './components/rubriques/Formations'
 import Competences from './components/rubriques/Competences'
 import Realisations from './components/rubriques/Realisations'
 import Langues from './components/rubriques/Langues'
-import Parallaxx from './components/Parallaxx'
+// import Parallaxx from './components/Parallaxx'
+import Ordinateur from './components/Ordinateur'
+// import Afficher from './components/Afficher'
 import Carousel from './components/carousel/Carousel';
 import CarouselSlide from './components/carousel/CarouselSlide';
 
@@ -17,43 +19,49 @@ export default  [
         path: '/', 
         components: {
             
-             main: Parallaxx,  
+             main: Ordinateur,  
         }, 
         name: 'accueil', 
-        children: [
-            {
-                path:'rubriques',
-                components: {
-                    formations: Formations,
-                    experiences: Experiences,
-                    competences: Competences,
-                    realisations: Realisations,
-                    langues: Langues
-                },
-                name: 'accueil.rubriques'
-            },
-            {
-                path:'carousel', 
-                components: {
-                    carousel: Carousel,
-                    carouselSlide: CarouselSlide,
-                },
-                name: 'accueil.carousel'
-            }
+        // children: [
+        //     {
+        //         path:'rubriques',
+        //         components: {
+        //             formations: Formations,
+        //             experiences: Experiences,
+        //             competences: Competences,
+        //             realisations: Realisations,
+        //             langues: Langues
+        //         },
+        //         name: 'accueil.rubriques'
+        //     },
+        //     {
+        //         path:'carousel', 
+        //         components: {
+        //             carousel: Carousel,
+        //             carouselSlide: CarouselSlide,
+        //         },
+        //         name: 'accueil.carousel'
+        //     }
         
-        ]
+        // ]
     },
+
+
+
     {
     path: '/cv', 
         components: {
-            main: Parallaxx,  
+            // navigation: CvNav,
+            main: Ordinateur, 
+            // footer: CvFooter
         }, 
         name: 'cv', 
         children: [
         {
             path:'rubriques',
             components: {
-                navigation: CvNav,
+                // navigation: CvNav,
+                // afficher: Afficher,
                 carousel: Carousel,
                 carouselSlide: CarouselSlide,
                 formations: Formations,
@@ -61,7 +69,7 @@ export default  [
                 competences: Competences,
                 realisations: Realisations,
                 langues: Langues,
-                footer: CvFooter
+                // footer: CvFooter
             },
             name: 'cv.rubriques'
         },
