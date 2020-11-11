@@ -8,19 +8,18 @@
         <!-- <router-view name="navigation"></router-view> -->
       </div>
       <!-- contenue principal -->
-      <v-main class="d-flex" 
-      style="padding:0px"
+      <v-main class="pt-0" 
+    
       > 
       <!-- partie carousel  -->
          <!-- <div class="carousel d-block mt-10"> -->
           <!-- router carousel  -->
           <!-- <router-view name="carousel"></router-view>  -->
          <!-- </div>      -->
-     <div class="main pt-0 grey lighten-1 d-flex align-self-center align-end justify-center" 
-     :style="`max-height:${mainHeight}px`" 
+     <div class="main grey lighten-1" 
+     
      id="main">
        <router-view name="main"> </router-view>
-    
            <!-- <div>
     <pdf scr="./assets/cinema.png"></pdf></div> -->
     <!-- <v-pdf src="./assets/CVFADIKA.pdf" style="display: inline-block; width: 25%"></v-pdf> -->
@@ -34,7 +33,7 @@
       </v-main>
        
         <!-- partie footer -->
-        <div class="footer">
+        <div class="footer" >
           <cv-footer ></cv-footer>
           <!-- router footer -->
           <!-- <router-view name="footer"></router-view> -->
@@ -66,6 +65,8 @@ export default {
   name: 'App',
   data() {
     return {
+      // mainWidth: (this.$vuetify.breakpoint.width),
+      // mainHeight: (this.$vuetify.breakpoint.height),
           //  mainStyle: "padding:0px"
           //  pdf: ""
     }
@@ -87,17 +88,17 @@ export default {
     // pdf,
     // videoPlayer
   },
-   mounted () {
+  //  mounted () {
      
       //  axios.get("cv_infos.php").then(function(result) {console.log(result.data); this.info= result.data})
       //  axios
       //  .get("../cv_infos.php")
       //  .then(result => {console.log(result.data); this.info= result.data})
      
-   },
-   computed: {
-      mainHeight () {
-        return this.$vuetify.breakpoint.height
+  //  },
+  //  computed: {
+      // mainHeight () {
+        // return (this.$vuetify.breakpoint.height)*0.78
         // switch (this.$vuetify.breakpoint.name) {
         //   case 'xs': return 220
         //   case 'sm': return 300
@@ -105,9 +106,9 @@ export default {
         //   case 'lg': return 490
         //   default: return 600
         // }
-      }
+      // }
       
-    },
+    // },
    
 };
 </script>
@@ -116,7 +117,14 @@ export default {
 #main {
   padding: 0px;
   margin: 0px;
-
+  /* height:100%; */
+  /* position: fixed; */
+  /* bottom:0px; */
+}
+.footer {
+  width:100%;
+  position:fixed;
+  bottom:0px;
 }
 /* .boutton__voir {
 

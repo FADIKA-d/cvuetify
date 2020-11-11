@@ -72,7 +72,8 @@ export default {
         {id:1, degree:'2', grade: 'Tire professionnel (BAC + 2)', year: 2020, field: 'Développeur Web et Web mobile', institution: 'Afpa', place: 'Amiens'},
         {id:2, degree:'5', grade: 'Master 2 (BAC +5)', year: 2011, field: 'Stratégie d’entreprise et économie industrielle', institution: 'Panthéon-Assas ', place: 'Paris'},
         {id:3, degree:'5', grade: 'Master 2 (BAC +5)', year: 2010, field: 'Economie industrielle et veille stratégique', institution: 'Montesquieu-Bordeaux 4', place: 'Bordeaux'}
-        ]
+        ],
+        navHeight: "50"
         }
 }}
 </script>

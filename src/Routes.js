@@ -11,8 +11,8 @@ import Langues from './components/rubriques/Langues'
 // import Parallaxx from './components/Parallaxx'
 import Ordinateur from './components/Ordinateur'
 // import Afficher from './components/Afficher'
-import Carousel from './components/carousel/Carousel';
-import CarouselSlide from './components/carousel/CarouselSlide';
+// import Carousel from './components/carousel/Carousel';
+// import CarouselSlide from './components/carousel/CarouselSlide';
 
 export default  [
     {
@@ -62,8 +62,8 @@ export default  [
             components: {
                 // navigation: CvNav,
                 // afficher: Afficher,
-                carousel: Carousel,
-                carouselSlide: CarouselSlide,
+                // carousel: Carousel,
+                // carouselSlide: CarouselSlide,
                 formations: Formations,
                 experiences: Experiences,
                 competences: Competences,
@@ -78,7 +78,8 @@ export default  [
             components: {
                 navigation: CvNav,
                 formations: Formations,
-                footer: CvFooter}, 
+                footer: CvFooter
+            }, 
             name: 'cv.formations'
         },
         {
