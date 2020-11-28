@@ -8,7 +8,7 @@ import Routes from './Routes'
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
-// Vue.use(Embed)
+// Vue.components("Rubriques", () => import("./components/rubriques/Rubriques"))
 
 const router = new VueRouter ( {
   routes: Routes,

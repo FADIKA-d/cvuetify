@@ -1,15 +1,16 @@
 // import HelloWorld from './components/HelloWorld'
 // import Contact from './components/Contact'
-import CvNav from './components/nav/CvNav'
-import CvFooter from './components/footer/CvFooter'
+// import CvNav from './components/nav/CvNav'
+// import CvFooter from './components/footer/CvFooter'
 // import Rubriques from './components/rubriques/Rubriques'
-import Experiences from './components/rubriques/Experiences'
-import Formations from './components/rubriques/Formations'
-import Competences from './components/rubriques/Competences'
-import Realisations from './components/rubriques/Realisations'
-import Langues from './components/rubriques/Langues'
+// import Experiences from './components/rubriques/Experiences'
+// import Formations from './components/rubriques/Formations'
+// import Competences from './components/rubriques/Competences'
+// import Realisations from './components/rubriques/Realisations'
+// import Langues from './components/rubriques/Langues'
+// import Rubriques from './components/rubriques/Rubriques'
 // import Parallaxx from './components/Parallaxx'
-import Ordinateur from './components/Ordinateur'
+// import Ordinateur from './components/Ordinateur'
 // import Afficher from './components/Afficher'
 // import Carousel from './components/carousel/Carousel';
 // import CarouselSlide from './components/carousel/CarouselSlide';
@@ -17,107 +18,246 @@ import Ordinateur from './components/Ordinateur'
 export default  [
     {
         path: '/', 
-        components: {
-            
-             main: Ordinateur,  
-        }, 
-        name: 'accueil', 
-        // children: [
-        //     {
-        //         path:'rubriques',
-        //         components: {
-        //             formations: Formations,
-        //             experiences: Experiences,
-        //             competences: Competences,
-        //             realisations: Realisations,
-        //             langues: Langues
-        //         },
-        //         name: 'accueil.rubriques'
-        //     },
-        //     {
-        //         path:'carousel', 
-        //         components: {
-        //             carousel: Carousel,
-        //             carouselSlide: CarouselSlide,
-        //         },
-        //         name: 'accueil.carousel'
-        //     }
-        
-        // ]
-    },
+        redirect: '/cv',
+        // components: {
+        //      default: Carousel,
 
-
-
-    {
-    path: '/cv', 
-        components: {
-            // navigation: CvNav,
-            main: Ordinateur, 
-            // footer: CvFooter
-        }, 
-        name: 'cv', 
+        //     //  rubriques: Rubriques,
+        // }, 
+        component: () => import("./components/Ordinateur"),
+        // name: 'accueil',  
+        // },
         children: [
         {
-            path:'rubriques',
-            components: {
-                // navigation: CvNav,
-                // afficher: Afficher,
-                // carousel: Carousel,
-                // carouselSlide: CarouselSlide,
-                formations: Formations,
-                experiences: Experiences,
-                competences: Competences,
-                realisations: Realisations,
-                langues: Langues,
-                // footer: CvFooter
+            path:'/cv',
+            component: () => import(/*webpackChunkName:"carousel" */"./components/carousel/Carousel"),
+          
+            //     components: {
+            //         rubriques: Rubriques,
+            // //         formations: Formations,
+            // //         experiences: Experiences,
+            // //         competences: Competences,
+            // //         realisations: Realisations,
+            // //         langues: Langues
+            //     },
+            name: 'cv',
+            
+        },
+        // children: [
+        {
+            path:'/rubriques',
+            name: 'cv.rubriques',
+            component: () => import("./components/rubriques/Rubriques"),
+            // component: [
+            // Rubriques( () => import("./components/rubriques/Rubriques")) ,
+            // Formations( () => import("./components/rubriques/Formations")), 
+            // ]
+            // components: {
+                // 'Rubriques': () => import("./components/rubriques/Rubriques"),
+            //   import("./components/rubriques/Rubriques")
+            //   'formations': () => import(
+                  /*webpackChunkName:"formation" */
+                  /*webpackPreload: true */
+                  /*webpackPrefetch: true */
+                //   '@/components/rubriques/Formations')
+            //   Experiences: () => import("@/components/rubriques/Experiences"),
+            //   Competences: () => import("./components/rubriques/Competences"),
+            //   Realisations: () => import("./components/rubriques/Realisations"),
+            //   Langues: () => import("./components/rubriques/Langues"),
+            // }, 
+            // components: () => { 
+            //     import("./components/rubriques/Rubriques");
+            //     import("./components/rubriques/Formations");
+            //     import("./components/rubriques/Experiences");
+                // }, 
+                // props: {
+                //     nom: 'john'
+                // },
+                // components: {
+                //     // navigation: CvNav,
+                //     // afficher: Afficher,
+                //     // carousel: Carousel,
+                //     // carouselSlide: CarouselSlide,
+                //     rubriques: Rubriques,
+                //     formations: Formations,
+                //     experiences: Experiences,
+                //     competences: Competences,
+                //     realisations: Realisations,
+                //     langues: Langues,
+                //     // footer: CvFooter
+                // },
+                
+                
             },
-            name: 'cv.rubriques'
-        },
-        {
-            path: 'formations',  
-            components: {
-                navigation: CvNav,
-                formations: Formations,
-                footer: CvFooter
-            }, 
-            name: 'cv.formations'
-        },
-        {
-            path: 'experiences',  
-            components: {
-                navigation: CvNav,
-                experiences: Experiences,
-                footer: CvFooter
-            }, 
-            name: 'cv.expériences'
-        },
-        {
-            path: 'competences', 
-            components: {
-            navigation: CvNav,   
-            competences: Competences,
-            footer: CvFooter
-            }, 
-            name: 'cv.compétences'},
+                    // children: [
+            {
+                path: '/formations',  
+                // components: {
+                //     // navigation: CvNav,
+                //     formations: Formations,
+                //     // footer: CvFooter
+                // }, 
+                component: () => import("./components/rubriques/Formations"),
+                name: 'cv.formations'
+            },
+            {
+                path: '/cv/experiences',  
+                // components: {
+                //     // navigation: CvNav,
+                //     experiences: Experiences,
+                //     // footer: CvFooter
+                // }, 
+                component: () => import("./components/rubriques/Experiences"),
+                name: 'cv.expériences'
+            },
+            {
+                path: '/cv/competences', 
+                // components: {
+                // // navigation: CvNav,   
+                // competences: Competences,
+                // // footer: CvFooter
+                // }, 
+                component: () => import("./components/rubriques/Competences"),
+                name: 'cv.compétences'
+            },
+            {
+                path: '/cv/realisations',  
+                // components: {
+                //     // navigation: CvNav, 
+                //     realisations: Realisations,
+                //     // footer: CvFooter
+                // }, 
+                component: () => import("./components/rubriques/Realisations"),
+                name: 'cv.réalisations'
+            },
+            {
+                path: '/cv/langues',  
+                // components: {
+                //     // navigation: CvNav,
+                //     langues: Langues,
+                //     // footer: CvFooter
+                // }, 
+                component: () => import("./components/rubriques/Langues"),
+                name: 'cv.langues'
+            },
+    //     {
+    //         path:'rubriques',
+    //         components: {
+    //             formations: Formations,
+    //             experiences: Experiences,
+    //             competences: Competences,
+    //             realisations: Realisations,
+    //             langues: Langues
+    //         },
+    //         name: 'cv.rubriques'
+    //     },
+    //     {
+    //         path:'carousel', 
+    //         components: {
+    //             carousel: Carousel,
+    //             carouselSlide: CarouselSlide,
+    //         },
+    //         name: 'cv.carousel'
+    //     }
+    
+    // ],
+    // },
+    ]
+    },
+    // {
+    //     path: '/ess',
         
-        {
-            path: 'realisations',  
-            components: {
-                navigation: CvNav, 
-                realisations: Realisations,
-                footer: CvFooter
-            }, 
-            name: 'cv.réalisations'
-        },
-        {
-            path: 'langues',  
-            components: {
-                navigation: CvNav,
-                langues: Langues,
-                footer: CvFooter
-            }, 
-            name: 'cv.langues'
-        },
+    // },
+            
+
+    // {
+    // path: '/cv', 
+    //     // components: {
+    //         // navigation: CvNav,
+    //         // main: Ordinateur, 
+    //         // carousel: Carousel,
+    //         // footer: CvFooter
+    //     // }, 
+    //     // props: {showCarousel: true,
+    //     //     showRubriques: false },
+    //     // beforeEnter: (route, next) => {
+    //     //     if(route.name == 'cv'){
+    //     //             next({ path:'/cv'})
+    //     //           }
+    //     // },
+    //     name: 'cv', 
+    //     params:{ showCarousel: true, picture: 'ordi' },
+    //     children: [
+    //     {
+    //         path:'/',
+    //         components: {
+    //             // main: Ordinateur,
+    //             carousel: Carousel,
+    //         },
+    //         // props:{ showCarousel: true, picture: 'ordi', showRubriques: false, },
+    //     },
+    //     {
+    //         path:'rubriques',
+    //         components: {
+    //             // navigation: CvNav,
+    //             // afficher: Afficher,
+    //             // carousel: Carousel,
+    //             // carouselSlide: CarouselSlide,
+    //             rubriques: Rubriques,
+    //             formations: Formations,
+    //             experiences: Experiences,
+    //             competences: Competences,
+    //             realisations: Realisations,
+    //             langues: Langues,
+    //             // footer: CvFooter
+    //         },
+    //         name: 'cv.rubriques'
+    //     },
+    //     {
+    //         path: 'formations',  
+    //         components: {
+    //             // navigation: CvNav,
+    //             formations: Formations,
+    //             // footer: CvFooter
+    //         }, 
+    //         name: 'cv.formations'
+    //     },
+    //     {
+    //         path: 'experiences',  
+    //         components: {
+    //             // navigation: CvNav,
+    //             experiences: Experiences,
+    //             // footer: CvFooter
+    //         }, 
+    //         name: 'cv.expériences'
+    //     },
+    //     {
+    //         path: 'competences', 
+    //         components: {
+    //         // navigation: CvNav,   
+    //         competences: Competences,
+    //         // footer: CvFooter
+    //         }, 
+    //         name: 'cv.compétences'},
+        
+    //     {
+    //         path: 'realisations',  
+    //         components: {
+    //             // navigation: CvNav, 
+    //             realisations: Realisations,
+    //             // footer: CvFooter
+    //         }, 
+    //         name: 'cv.réalisations'
+    //     },
+    //     {
+    //         path: 'langues',  
+    //         components: {
+    //             navigation: CvNav,
+    //             langues: Langues,
+    //             footer: CvFooter
+    //         }, 
+    //         name: 'cv.langues'
+    //     },
             
         // {path: '/interets',  components: {
         //     navigation: CvNav,
@@ -133,9 +273,9 @@ export default  [
         //     },
         //     name: 'cv.carousel'
         // }
-    ]
-    },
-   
+    // ]
+    // },
+    
     // {path: '/formation',  components: {navigation: CvNav,
     //     formations: Formations,
     //     experiences: Experiences,
@@ -217,6 +357,6 @@ export default  [
     // {path: '/contact', component: Contact},  
     // {path: '/formation', component: Formations, name:'bottom'},  
      
-    // {path: '*', redirect: '/'}
+    // {path: '*', redirect: '/cv'}
     
 ]

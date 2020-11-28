@@ -5,7 +5,7 @@
 
 <h1 class="pa-1 font-weight-bold text-uppercase titre__rubrique">Formations</h1>
 
-<v-row class="fill-height" justify="space-between">
+<v-row class="fill-height fill-width" justify="space-between">
  <template v-for="education in educations">
 <v-col :key="education.id"
       :degree="education.degree"
@@ -13,10 +13,14 @@
       :grade="education.grade"
       :institution="education.institution"
       :place="education.place"
-      class="d-flex justify-space-around "
+      cols="12"
+      md="4"
+      lg="4"
+     
+      :class="formationClass"
      >
-<v-card >
-      <v-card-title class="font-weight-bold align-justify card__rubrique ma-0 body-1">{{education.field}}</v-card-title> 
+<v-card width="100%">
+      <v-card-title class="font-weight-bold align-justify card__rubrique ma-0 " style="word-break:normal">{{education.field}}</v-card-title> 
       <v-card-text>
           <v-row
             class="fill-height flex-inline formation__row"
@@ -75,7 +79,30 @@ export default {
         ],
         navHeight: "50"
         }
-}}
+},
+computed: {
+    formationClass() {
+        switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 'd-block'
+        case 'sm': return 'd-block'
+        case 'md': return 'd-flex'
+        case 'lg': return 'd-flex flex-grow-2'
+        case 'xl': return 'd-flex'
+        default: return 'd-flex'
+      }
+    }
+},
+// formationSize(){
+//         switch (this.$vuetify.breakpoint.name) {
+//         case 'xs': return 'line-height:0.9rem; font-size:1rem;'
+//         case 'sm': return 'line-height:1.1rem; font-size:1.1rem;'
+//         case 'md': return 'line-height:1.5rem; font-size:1.5rem;'
+//         case 'lg': return 'line-height:0.5rem; font-size:1rem;'
+//         case 'xl': return 'line-height:1rem; font-size:1rem;'
+//         default: return 'line-height:1.1rem; font-size:1.1rem;'
+//       }
+// }
+}
 </script>
 <style>
 .formation__row {

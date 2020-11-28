@@ -3,24 +3,25 @@
         <slot></slot>
         <v-container class="pa-4 text-center">
             <h1 class="pa-1 font-weight-bold text-uppercase titre__rubrique">Langues</h1>
-              <v-row class="fill-height" justify="space-between">  
-            <!-- <template v-for="language in languages">
-                <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
-                    <v-progress-circular
+              <v-row class="fill-height" :justify="justifyLangues">  
+            <template v-for="language in languages">
+                <v-col :key="language.id" cols="12" md="3"  class="d-flex " align="center" style="justify-content: center">
+                     <v-progress-circular
                         :rotate="-90"
-                        :size="200"
-                        :width="30"
+                        :size="circleSize"
+                        :width="circleWidth"
                         :src="language.src"
-                        :value="value"
+                        :value="language.id==1? value1: language.id==2? value2: value3"
                         color="teal lighten-3"
                     >
-                        <img :src="require(`@/assets/${language.src}.png`)" height="150px" :alt="`${language.language}`" >
+                    <!-- :value="valueV[`${language.id-1}`]" -->
+                        <img :src="require(`@/assets/${language.src}.png`)" :height="circleImageHeight" :alt="`${language.language}`" >
                     </v-progress-circular>
-
+                    {{value}}
                     </v-col>
-            </template>   -->
-            <template v-for="language in languagesF">
-                <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
+            </template>  
+            <!-- <template v-for="language in languagesF">
+                <v-col :key="language.id" cols="12" md="3" class="d-flex " align="center" style="justify-content: center">
                     <v-progress-circular
                         :rotate="-90"
                         :size="200"
@@ -35,7 +36,7 @@
                     </v-col>
             </template>  
             <template v-for="language in languagesU">
-                <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
+                <v-col :key="language.id" cols="12" md="3" class="d-flex " align="center" style="justify-content: center">
                     <v-progress-circular
                         :rotate="-90"
                         :size="200"
@@ -50,7 +51,7 @@
                     </v-col>
             </template>  
             <template v-for="language in languagesE">
-                <v-col :key="language.id" cols="3" class="d-flex " align="center" justify="space-around">
+                <v-col :key="language.id" cols="12" md="3" class="d-flex " align="center" style="justify-content: center">
                     <v-progress-circular
                         :rotate="-90"
                         :size="200"
@@ -63,7 +64,7 @@
                     </v-progress-circular>
 
                     </v-col>
-            </template>  
+            </template>   -->
                 </v-row>
         </v-container>  
     </div>
@@ -73,56 +74,119 @@
 export default {
     data () {
         return {
-        //  languages: [
-        // {id:1, language: 'Français', level: 100, src: "france"},
-        // {id:2, language: 'Anglais', level: 70, src: "united_kingdom"},
-        // {id:3, language: 'Espagnol', level: 40, src: "spain"}
-        // ], 
-         languagesF: [{id:1, language: 'Français', level: 100, src: "france"}], 
-         languagesU: [{id:2, language: 'Anglais', level: 70, src: "united_kingdom"}], 
-         languagesE: [{id:3, language: 'Espagnol', level: 40, src: "spain"}], 
-        // interval: {},
+         languages: [
+        {id:1, language: 'Français', level: 100, src: "france", value: 0},
+        {id:2, language: 'Anglais', level: 70, src: "united_kingdom", value: 0},
+        {id:3, language: 'Espagnol', level: 40, src: "spain", value: 0}
+        ], 
+        //  languagesF: [{id:1, language: 'Français', level: 100, src: "france"}], 
+        //  languagesU: [{id:2, language: 'Anglais', level: 70, src: "united_kingdom"}], 
+        //  languagesE: [{id:3, language: 'Espagnol', level: 40, src: "spain"}], 
+        interval: {},
         intervalF: {},
         intervalU: {},
         intervalE: {},
-        // value: 0,
-        valueF: 0,
-        valueU: 0,
-        valueE: 0,
+        valueV: [0,0,0],
+        value1: 0,
+        value2: 0,
+        value3: 0,
+        circleImageHeight: "85rem",
+        circleSize: 100,
+        circleWidth: 10,
         }
     }, 
     beforeDestroy () {
       clearInterval(this.interval)
     },
     mounted () {
-        // this.interval = setInterval(()=> {
+// valueF(){
+//     this.intervalF = setInterval(()=> {
 
-        //     if (this.value == 100){
-        //     return (this.value = 0)
+//             if (this.valueF == 100){
+//             return (this.valueF = 100)
+//             }
+//             this.valueF += 10
+//         }, 200)
+// },
+// valueU(){
+//     this.intervalU = setInterval(()=> {
+
+//             if (this.valueU == 70){
+//             return (this.valueU = 70)
+//             }
+//             this.valueU += 10
+//         }, 200)
+// },
+// valueE(){
+//     this.intervalE = setInterval(()=> {
+
+//             if (this.valueE == 40){
+//             return (this.valueE = 40)
+//             }
+//             this.valueE += 10
+//         }, 200)
+// }
+// }
+
+
+
+
+        // this.intervalF = setInterval(()=> {
+
+        //     if (this.valueV[0] == 100){
+        //     return (this.valueV[0] = 100)
         //     }
-        //     this.value += 10
-        // }, 1000),
+        //     this.valueV[0] += 10
+        // }, 200),
+        // this.intervalU = setInterval(()=> {
+
+        //     if (this.valueV[1] == 70){
+        //     return (this.valueV[1] = 70)
+        //     }
+        //     this.valueV[1] += 10
+        // }, 200),
+        // this.intervalE = setInterval(()=> {
+
+        //     if (this.valueV[2] == 40){
+        //     return (this.valueV[2] = 40)
+        //     }
+        //     this.valueV[2] += 10
+        // }, 200)
+
+
         this.intervalF = setInterval(()=> {
 
-            if (this.valueF == 100){
-            return (this.valueF = 100)
+            if (this.value1 == 100){
+            return (this.value1 = 100)
             }
-            this.valueF += 10
+            this.value1 += 10
         }, 200),
         this.intervalU = setInterval(()=> {
 
-            if (this.valueU == 70){
-            return (this.valueU = 70)
+            if (this.value2 == 70){
+            return (this.value2 = 70)
             }
-            this.valueU += 10
+            this.value2 += 10
         }, 200),
         this.intervalE = setInterval(()=> {
 
-            if (this.valueE == 40){
-            return (this.valueE = 40)
+            if (this.value3 == 40){
+            return (this.value3 = 40)
             }
-            this.valueE += 10
+            this.value3 += 10
         }, 200)
+    },
+    computed: {
+      justifyLangues(){
+        switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 'center'
+        case 'sm': return 'center'
+        case 'md': return 'space-between'
+        case 'lg': return 'space-between'
+        case 'xl': return 'space-between'
+        default: return 'center'
+      }
+    },
     }
 }
 </script>

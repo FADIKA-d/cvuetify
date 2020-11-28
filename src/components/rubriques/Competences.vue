@@ -4,13 +4,12 @@
 <v-container class="pa-4  text-center">
 <h1 class="pa-1  font-weight-bold text-uppercase titre__rubrique">Compétences</h1>
 
+   <v-row :justify="justifyCompetences"  align="center">
   <template v-for="skill in skills">
-<div :key="skill.id">
-   <v-row  justify="center" align="center">
-        <v-col cols="3" class="pa-0 text-end ">
+<!-- <div> -->
+        <v-col cols="12" md="6" xl="3" :key="skill.id" >
+          <div class="d-flex py-0 px-1" style="width:100%" >
           <v-icon>{{skill.icon}}</v-icon>
-        </v-col>
-        <v-col cols="7" >
           <v-progress-linear
               :value="skill.level"
               height="20"
@@ -23,10 +22,11 @@
         <strong class="text-end white--text">{{ Math.ceil(value) }}%</strong>
       </template>
           </v-progress-linear>
+          </div>
       </v-col>
- </v-row>
-</div>
+<!-- </div> -->
 </template>
+ </v-row>
 
   </v-container>
 </div>
@@ -65,7 +65,18 @@ export default {
         // this.startBuffer()
       },
     },
-
+    computed: {
+      justifyCompetences(){
+        switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 'center'
+        case 'sm': return 'center'
+        case 'md': return 'space-between'
+        case 'lg': return 'space-between'
+        case 'xl': return 'space-between'
+        default: return 'center'
+      }
+    },
+    }
     // mounted () {
     //   this.startBuffer()
     // },

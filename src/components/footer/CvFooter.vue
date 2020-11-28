@@ -7,7 +7,7 @@
       >
       <v-card
       class="flex"
-      color= 'blue-grey lighten-3'
+      color= 'grey lighten-1'
       flat
       tile>
 

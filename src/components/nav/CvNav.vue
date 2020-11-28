@@ -9,8 +9,8 @@
       :shrink-on-scroll="isSmall? false : true"
       :width="navWidth"
       :height="isSmall? navSmallHeight : navHeight"
-      scroll-target="#rubriques"
-      :src="require('./../../assets/notes.jpg')"
+      :scroll-target="scrollTarget"
+      :src="require('./../../assets/top8.jpg')"
       fade-img-on-scroll
     >
     <!-- template pour le fond du la barre de navigation -->
@@ -183,7 +183,7 @@ export default {
             isSmall: (this.$vuetify.breakpoint.height)< 400 ? true : false,
             // isSmall: false,
             breakpoint: this.$vuetify.breakpoint.name,
-            
+            scrollTarget: "#rubriques",
 
         }
     },

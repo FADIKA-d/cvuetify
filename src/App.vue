@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app color="grey lighten-1" >
     <div id="app">
       <!-- partie navigation -->
       <div class="navigation">
@@ -8,18 +8,19 @@
         <!-- <router-view name="navigation"></router-view> -->
       </div>
       <!-- contenue principal -->
-      <v-main class="pt-0" 
-    
+      <v-main 
+    class="d-flex align-stretch"
       > 
       <!-- partie carousel  -->
          <!-- <div class="carousel d-block mt-10"> -->
           <!-- router carousel  -->
           <!-- <router-view name="carousel"></router-view>  -->
          <!-- </div>      -->
-     <div class="main grey lighten-1" 
+     <div class="main d-flex align-stretch" 
      
      id="main">
-       <router-view name="main"> </router-view>
+       <router-view> </router-view>
+       <!-- <ordinateur></ordinateur> -->
            <!-- <div>
     <pdf scr="./assets/cinema.png"></pdf></div> -->
     <!-- <v-pdf src="./assets/CVFADIKA.pdf" style="display: inline-block; width: 25%"></v-pdf> -->
@@ -29,9 +30,15 @@
   
 </video-player> -->
 <!-- <video-embed src="https://www.youtube.com/watch?v=s4ObxcdXoFE"></video-embed> -->
+     
+            <!-- <div class="carousel d-flex flex-wrap align-self-center justify-center" id="carousel" 
+            :style="`width:${carouselWidth}px`" >
+            <router-view name="carousel"></router-view>
+        </div> -->
      </div>
+     
       </v-main>
-       
+       <!-- <pre> {{ JSON.stringify($route, null, 2) }} </pre>  -->
         <!-- partie footer -->
         <div class="footer" >
           <cv-footer ></cv-footer>
@@ -47,6 +54,7 @@
 // import CarouselSlide from './components/carousel/CarouselSlide';
 import CvNav from './components/nav/CvNav'
 import CvFooter from './components/footer/CvFooter'
+// import Ordinateur from './components/Ordinateur'
 // import Rubriques from './components/rubriques/Rubriques'
 // import Experiences from './components/rubriques/Experiences'
 // import Formations from './components/rubriques/Formations'
@@ -77,6 +85,7 @@ export default {
     // CarouselSlide, 
     CvNav,
     CvFooter, 
+    // Ordinateur,
     // Rubriques, 
     // Experiences,
     // Formations,
@@ -113,13 +122,21 @@ export default {
 };
 </script>
 <style>
-
+.v-application--wrap{
+  background:rgb(195, 195, 195);
+}
 #main {
   padding: 0px;
   margin: 0px;
-  /* height:100%; */
+  height:100%;
   /* position: fixed; */
-  /* bottom:0px; */
+  /* position: inherit; */
+  /* position: relative; */
+  /* position: static; */
+  /* position: unset; */
+  bottom:0px;
+  top:0px;
+  background:rgb(195, 195, 195);
 }
 .footer {
   width:100%;
